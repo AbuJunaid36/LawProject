@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../LandingPage/Hero/Hero";
 import Ourservices from "../LandingPage/Ourserives/Ourservices";
 import Countsection from "../LandingPage/CountSection/Countsection";
@@ -17,6 +17,12 @@ import Partner from "../LandingPage/Partner/Partner";
 import Websitepartner from "../LandingPage/WebsitePartner/Websitepartner";
 
 const LandingPage = () => {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <Hero />
