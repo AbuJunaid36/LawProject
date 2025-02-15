@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Hero from "../LandingPage/Hero/Hero";
 import Ourservices from "../LandingPage/Ourserives/Ourservices";
 import Countsection from "../LandingPage/CountSection/Countsection";
@@ -19,10 +19,9 @@ import Websitepartner from "../LandingPage/WebsitePartner/Websitepartner";
 const LandingPage = () => {
   return (
     <div>
-      
       <Hero />
 
-      <Ourservices/>
+      <Ourservices />
 
       <Lawyearlist />
 
@@ -97,10 +96,8 @@ const LandingPage = () => {
       <Question />
 
       <Registration />
-
-
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
