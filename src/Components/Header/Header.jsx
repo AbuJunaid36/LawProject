@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Function to close the mobile menu
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div>
-      <header className="bg-white text-black shadow-md">
+      <header className="bg-white text-black shadow-md md:px-32">
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           {/* Logo */}
-          <Link to="/" className="text-lg font-bold">
+          <Link to="/" className="text-lg font-bold" onClick={closeMobileMenu}>
             Logo
           </Link>
 
@@ -35,9 +41,12 @@ const Header = () => {
           </nav>
 
           {/* Login button */}
-          <button className="hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm transition-all">
+          <Link
+            to="/LogIn"
+            className="hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm transition-all"
+          >
             Log In
-          </button>
+          </Link>
 
           {/* Hamburger Menu */}
           <div className="md:hidden">
@@ -67,30 +76,41 @@ const Header = () => {
         {isOpen && (
           <div className="md:hidden bg-gray-100 border-t border-gray-300">
             <nav className="flex flex-col space-y-4 p-4">
-              <a href="#home" className="hover:text-blue-600 transition-colors">
+              <a
+                href="#home"
+                className="hover:text-blue-600 transition-colors"
+                onClick={closeMobileMenu}
+              >
                 Home
               </a>
               <a
                 href="#about"
                 className="hover:text-blue-600 transition-colors"
+                onClick={closeMobileMenu}
               >
                 About Us
               </a>
               <a
                 href="#contact"
                 className="hover:text-blue-600 transition-colors"
+                onClick={closeMobileMenu}
               >
                 Contact Us
               </a>
               <a
                 href="#schedule"
                 className="hover:text-blue-600 transition-colors"
+                onClick={closeMobileMenu}
               >
                 Schedule
               </a>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm transition-all mt-2">
+              <Link
+                to="/LogIn"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm transition-all mt-2"
+                onClick={closeMobileMenu}
+              >
                 Log In
-              </button>
+              </Link>
             </nav>
           </div>
         )}
