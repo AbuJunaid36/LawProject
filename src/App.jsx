@@ -21,7 +21,7 @@ function Layout() {
     <div>
       <Header />
       <Outlet />
-      <MobileNav/>
+      <MobileNav />
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ function MobileNav() {
   const location = useLocation(); // Get the current location
 
   return (
-    <div className="sm:hidden fixed bottom-0 w-full bg-gradient-to-t from-gray-50 to-white shadow-lg z-40 border-t">
+    <div className="sm:hidden fixed bottom-0 w-full bg-gradient-to-t from-gray-50 to-white shadow-lg z-40 border-t ">
       <div className="flex justify-between py-3 px-4 relative">
         {/* Home Link */}
         <Link to="/" className="flex flex-col items-center group">

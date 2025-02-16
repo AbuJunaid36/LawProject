@@ -55,7 +55,7 @@ const AllLawyears = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mb-20 md:mb-0">
       <div className="text-2xl md:text-4xl font-bold w-[90%] md:w-[80%] mx-auto mt-4  shadow-[0_3px_5px_rgb(0,0,0,0.1)] rounded-xl p-4">
         <p>Lawyears</p>
       </div>

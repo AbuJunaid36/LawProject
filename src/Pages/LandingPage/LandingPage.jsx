@@ -23,7 +23,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="mb-10 md:mb-0">
       <Hero />
 
       <Ourservices />
