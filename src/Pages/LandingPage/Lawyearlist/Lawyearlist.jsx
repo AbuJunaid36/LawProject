@@ -71,20 +71,21 @@ const Lawyearlist = () => {
 
   return (
     <div className="mx-auto w-[90%] md:w-[80%] custom-scrollbar mb-8">
-      <div>
+      <div className="flex items-center justify-between">
         <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-4 flex justify-center">
           Popular Lawyears
         </h2>
+        <p>See All</p>
       </div>
       {/* Container for the cards */}
-      <div className="grid grid-cols-2 gap-3 sm:flex sm:overflow-x-auto sm:gap-4 sm:pb-4 md:px-1">
+      <div className="grid grid-cols-2 gap-3 sm:flex sm:overflow-x-auto sm:gap-4 sm:pb-4 md:px-1 pt-">
         {(window.innerWidth >= 1024
           ? doctors
           : doctors.slice(0, visibleCards)
         ).map((doctor, index) => (
           <Link
-          to="/LawyearDetails"
-            className="bg-white p-1 rounded-lg shadow-md sm:min-w-[200px] sm:flex-shrink-0 lg:min-w-[300px] lg:p-6 block"
+            to="/LawyearDetails"
+            className="bg-white p-1 rounded-lg shadow-[0_3px_5px_rgb(0,0,0,0.1)] sm:min-w-[200px] sm:flex-shrink-0 lg:min-w-[300px] lg:p-6 block"
           >
             <div className="flex flex-col items-center">
               <img

@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { IoVideocamOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -48,9 +49,16 @@ const doctors = [
 ];
 
 const AllLawyears = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div >
-      <div className="text-2xl md:text-4xl font-bold w-[90%] md:w-[80%] mx-auto mt-4"> <p>Lawyears</p></div>
+    <div>
+      <div className="text-2xl md:text-4xl font-bold w-[90%] md:w-[80%] mx-auto mt-4  shadow-[0_3px_5px_rgb(0,0,0,0.1)] rounded-xl p-4">
+        <p>Lawyears</p>
+      </div>
       <div className="w-[90%] md:w-[80%] mx-auto mt-4">
         {doctors.map((doctor) => (
           <Link to="/LawyearDetails" className="block">
