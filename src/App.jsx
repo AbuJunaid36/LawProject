@@ -13,6 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 import LawyearDetails from "./Pages/LawyearDetails/LawyearDetails";
 import MobileNav from "./Components/MobileNav/MobileNav";
+import AllLawyears from "./Pages/AllLawyears/AllLawyears";
 
 
 function Layout() {
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<LandingPage />} />
       <Route path="/LawyearDetails" element={<LawyearDetails />} />
+      <Route path="/AllLawyears" element={<AllLawyears />} />
     </Route>
   )
 );

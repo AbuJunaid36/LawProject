@@ -48,8 +48,25 @@ function MobileNav() {
           </span>
         </Link>
 
+        {/* Lawyears Button */}
+        <Link to="/AllLawyears" className="flex flex-col items-center group">
+          <GoLaw
+            size={26}
+            className={`${
+              location.pathname === "/menu" ? "text-blue-500" : "text-gray-700"
+            } group-hover:text-blue-500 transition duration-200 ease-in-out`}
+          />
+          <span
+            className={`text-xs ${
+              location.pathname === "/menu" ? "text-blue-500" : "text-gray-600"
+            } group-hover:text-blue-500 transition duration-200 ease-in-out`}
+          >
+            Lawyears
+          </span>
+        </Link>
+
         {/* Order Link */}
-        <Link to="/order" className="flex flex-col items-center group ml-12">
+        <Link to="/order" className="flex flex-col items-center group">
           <FaListAlt
             size={26}
             className={`${
@@ -82,8 +99,9 @@ function MobileNav() {
           </span>
         </Link>
 
+
         {/* Centered Law Icon */}
-        <Link
+        {/* <Link
           to="/LawyearDetails"
           className="absolute left-1/2 transform -translate-x-1/2 bottom-8 flex justify-center items-center w-16 h-16 bg-gray-100 rounded-full border-2 border-gray-200 shadow-lg hover:bg-gray-200 hover:shadow-xl transition duration-300 ease-in-out"
           aria-label="Go to Lawyer Details"
@@ -96,7 +114,7 @@ function MobileNav() {
                 : "text-gray-700"
             } transition duration-200 ease-in-out`}
           />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
