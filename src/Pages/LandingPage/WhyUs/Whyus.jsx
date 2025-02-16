@@ -22,7 +22,7 @@ const Whyus = () => {
 
   return (
     <div>
-      <div className="bg-white my-20 mx-auto w-[80%] ">
+      <div className="bg-white my-14 md:my-20 mx-auto w-[80%] ">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
           {/* Left Image Section */}
           <div className="relative">
@@ -44,10 +44,10 @@ const Whyus = () => {
 
           {/* Right Text Content */}
           <div className="text-center lg:text-left">
-            <h3 className="text-xl font-semibold text-blue-600 mb-2 md:mb-4">
+            <h3 className="text-lg md:text-xl font-semibold text-blue-600 mb-2 md:mb-4">
               Why Us?
             </h3>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-8">
+            <h2 className="text-2xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-8">
               Country's leading healthcare app for yourself & your family
             </h2>
             <div className="space-y-6">

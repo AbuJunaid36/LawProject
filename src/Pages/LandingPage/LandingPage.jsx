@@ -17,7 +17,6 @@ import Partner from "../LandingPage/Partner/Partner";
 import Websitepartner from "../LandingPage/WebsitePartner/Websitepartner";
 
 const LandingPage = () => {
-
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -35,15 +34,15 @@ const LandingPage = () => {
 
       <Whyus />
 
-      <section className="flex mx-auto flex-col lg:flex-row items-center bg-white w-[80%] my-20">
+      <section className="flex mx-auto flex-col lg:flex-row items-center bg-white w-[80%] my-10 md:my-40">
         {/* Text Section */}
-        <div className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0 order-last lg:order-none">
-          <h2 className="text-3xl md:text-6xl font-bold text-gray-800 leading-snug">
+        <div className="lg:w-1/2 text-center lg:text-left order-last lg:order-none">
+          <h2 className="text-2xl md:text-6xl font-bold text-gray-800 leading-snug">
             70% of Health Consultations
             <br />
             can be managed online
           </h2>
-          <p className="text-gray-600 text-xl mt-4">
+          <p className="text-gray-600 text-md md:text-xl mt-4">
             According to{" "}
             <a href="#" className="text-blue-500 font-medium">
               health professionals
@@ -61,13 +60,13 @@ const LandingPage = () => {
 
         {/* Image Section */}
         <div className="lg:w-1/2 flex justify-center order-firstt lg:order-none">
-          <div className="relative w-3/4 lg:w-2/3">
+          <div className="relative w-2/4 lg:w-2/3">
             {/* Circular Icon */}
             <div className="absolute -top-6 -left-6 bg-white shadow-lg rounded-full p-2 flex items-center justify-center">
               <img
                 src="/img/icon.png"
                 alt="icon"
-                className="w-20  md:w-28 h-20  md:h-28 rounded-full opacity-70"
+                className="w-14  md:w-28 h-14  md:h-28 rounded-full opacity-70"
                 style={{ rotate: "-30deg" }}
               />
             </div>

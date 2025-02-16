@@ -90,9 +90,9 @@ const Lawyearlist = () => {
         ).map((doctor, index) => (
           <Link
             to="/LawyearDetails"
-            className="bg-white p-1 rounded-lg shadow-[0_3px_5px_rgb(0,0,0,0.1)] sm:min-w-[200px] sm:flex-shrink-0 lg:min-w-[300px] lg:p-6 block"
+            className="bg-white p-1 rounded-lg shadow-[0_3px_5px_rgb(0,0,0,0.1)] sm:min-w-[200px] sm:flex-shrink-0 lg:min-w-[300px] lg:p-6  flex flex-col"
           >
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center flex-grow">
               <img
                 src={doctor.image}
                 alt={doctor.name}
@@ -106,17 +106,17 @@ const Lawyearlist = () => {
                   {doctor.qualification}
                 </p>
               </div>
-              <div className="mt-2 text-center">
-                <p className="text-md font-semibold lg:text-lg">
-                  {doctor.price}{" "}
-                  <span className="text-xs text-gray-600 lg:text-sm">
-                    {doctor.vat}
-                  </span>
-                </p>
-                <button className="mt-1 bg-blue-500 text-white px-5 py-2 rounded-lg text-xs w-full font-bold lg:text-sm lg:px-6 lg:py-3">
-                  Book Appointment
-                </button>
-              </div>
+            </div>
+            <div className=" text-center mt-auto">
+              <p className="text-md font-semibold lg:text-lg">
+                {doctor.price}{" "}
+                <span className="text-xs text-gray-600 lg:text-sm">
+                  {doctor.vat}
+                </span>
+              </p>
+              <button className="mt-1 bg-blue-500 text-white px-5 py-2 rounded-lg text-xs w-full font-bold lg:text-sm lg:px-6 lg:py-3">
+                Book Appointment
+              </button>
             </div>
           </Link>
         ))}

@@ -35,7 +35,7 @@ const Countsection = () => {
   ];
 
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="bg-blue-50 py-12 md:py-20 px-4 overflow-x-auto my-10 md:my-20">
         <div className="flex justify-between space-x-12 w-[80%] mx-auto">
           {cardData.map((card, index) => (

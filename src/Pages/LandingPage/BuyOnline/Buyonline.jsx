@@ -3,7 +3,7 @@ import React from "react";
 const Buyonline = () => {
   return (
     <div>
-      <section className="py-10 md:py-20  my-20">
+      <section className="py-4 md:py-12 px-4 my-10 md:my-20">
         <div className="mx-auto w-[80%] md:gap-8 flex flex-col md:flex-row items-center justify-between">
           {/* Image Section */}
           <div className="w-full md:w-1/2 flex justify-center">
@@ -19,7 +19,7 @@ const Buyonline = () => {
             <h2 className="text-2xl md:text-6xl font-bold text-gray-800 mb-4 md:mb-8">
               Buy Land from <br /> Buyers
             </h2>
-            <p className="text-gray-700 text-xl md:text-2xl mt-4 mb-6  md:mb-12">
+            <p className="text-gray-700 text-lg md:text-2xl mt-4 mb-6  md:mb-12">
               Authentic medicines with discounts & free home delivery within
               Dhaka city
             </p>

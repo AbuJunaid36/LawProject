@@ -39,7 +39,7 @@ const Availablelawyear = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 py-12 px-4 my-20">
+      <div className="bg-gray-100 py-4 md:py-12 px-4 my-10 md:my-20">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8">
           {/* Left Content */}
           <div className=" md:w-1/3">
