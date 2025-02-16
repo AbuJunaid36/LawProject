@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../../App.css";
 import { Link } from "react-router-dom";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Lawyearlist = () => {
   const [visibleCards, setVisibleCards] = useState(4); // Initially show 4 cards
@@ -71,14 +72,18 @@ const Lawyearlist = () => {
 
   return (
     <div className="mx-auto w-[90%] md:w-[80%] custom-scrollbar mb-8">
-      <div className="flex items-center justify-between">
-        <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-4 flex justify-center">
+      <div className="flex items-center justify-between mb-2 md:mb-4">
+        <h2 className="text-2xl md:text-6xl font-bold text-gray-800  flex justify-center">
           Popular Lawyears
         </h2>
-        <p>See All</p>
+        <Link to="/AllLawyears">
+          <p className="flex items-center md:gap-1 text-blue-600 hover:text-blue-800 cursor-pointer transition">
+            See All <IoIosArrowRoundForward className="text-xl" />
+          </p>
+        </Link>
       </div>
       {/* Container for the cards */}
-      <div className="grid grid-cols-2 gap-3 sm:flex sm:overflow-x-auto sm:gap-4 sm:pb-4 md:px-1 pt-">
+      <div className="grid grid-cols-2 gap-3 sm:flex sm:overflow-x-auto sm:gap-4 sm:pb-4 md:px-1 pt-4">
         {(window.innerWidth >= 1024
           ? doctors
           : doctors.slice(0, visibleCards)

@@ -31,12 +31,12 @@ const OurServices = () => {
   ];
 
   return (
-    <div className="bg-white my-10 md:my-20 mx-auto w-full md:w-[83%]">
-      <h2 className="text-center text-4xl md:text-6xl font-bold text-gray-800 md:mb-8">
+    <div className="bg-white my-5 md:my-20 mx-auto w-full md:w-[83%]">
+      <h2 className="text-center text-2xl md:text-6xl font-bold text-gray-800 mb-2 md:mb-4">
         Legal Services
       </h2>
 
-      <div className="flex justify-between lg:grid-cols-5 overflow-y-hidden custom-scrollbar space-x-6 p-8 ">
+      <div className="flex justify-between lg:grid-cols-5 overflow-y-hidden custom-scrollbar space-x-6 p-4  md:p-8  ">
         {services.map((service, index) => (
           <a
             href="/"
