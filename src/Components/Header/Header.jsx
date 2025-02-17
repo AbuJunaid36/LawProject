@@ -20,23 +20,29 @@ const Header = () => {
 
           {/* Navigation links */}
           <nav className="hidden md:flex space-x-6">
-            <a href="#home" className="hover:text-blue-600 transition-colors">
+            <a href="/" className="hover:text-blue-600 transition-colors">
               Home
             </a>
-            <a href="#about" className="hover:text-blue-600 transition-colors">
+            <a href="/" className="hover:text-blue-600 transition-colors">
               About Us
             </a>
             <a
-              href="#contact"
+              href="/"
               className="hover:text-blue-600 transition-colors"
             >
               Contact Us
             </a>
             <a
-              href="#schedule"
+              href="/"
               className="hover:text-blue-600 transition-colors"
             >
               Schedule
+            </a>
+            <a
+              href="/ForLawyears"
+              className="hover:text-blue-600 transition-colors"
+            >
+              For Lawyears
             </a>
           </nav>
 
@@ -77,32 +83,39 @@ const Header = () => {
           <div className="md:hidden bg-gray-100 border-t border-gray-300">
             <nav className="flex flex-col space-y-4 p-4">
               <a
-                href="#home"
+                href="/"
                 className="hover:text-blue-600 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Home
               </a>
               <a
-                href="#about"
+                href="/"
                 className="hover:text-blue-600 transition-colors"
                 onClick={closeMobileMenu}
               >
                 About Us
               </a>
               <a
-                href="#contact"
+                href="/"
                 className="hover:text-blue-600 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Contact Us
               </a>
               <a
-                href="#schedule"
+                href="/"
                 className="hover:text-blue-600 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Schedule
+              </a>
+              <a
+                href="/ForLawyears"
+                className="hover:text-blue-600 transition-colors"
+                onClick={closeMobileMenu}
+              >
+                For Lawyears
               </a>
               <Link
                 to="/LogIn"
