@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaStar, FaClock, FaCalendarCheck } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const LawyearDetails = () => {
   useEffect(() => {
@@ -129,17 +129,23 @@ const LawyearDetails = () => {
 
           {/* Consultation Fee Section */}
           <div className="text-center mt-6 md:mt-0 md:text-right">
-            <p className="text-gray-600 lg:text-lg">Consultation Fee</p>
-            <p className="text-3xl lg:text-4xl font-bold text-blue-600 mt-2">
-              ৳{doctorData.consultationFee}{" "}
-              <span className="text-sm lg:text-base text-gray-500">
-                (Incl. VAT)
-              </span>
-            </p>
-            <button className="mt-4 px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-lg lg:text-lg font-semibold hover:from-green-500 hover:to-green-600 transition-all duration-300 transform hover:scale-105">
-              Book Appointment
-            </button>
-          </div>
+  <p className="text-gray-600 lg:text-lg">Consultation Fee</p>
+  <p className="text-3xl lg:text-4xl font-bold text-blue-600 mt-2">
+    ৳{doctorData.consultationFee}{" "}
+    <span className="text-sm lg:text-base text-gray-500">
+      (Incl. VAT)
+    </span>
+  </p>
+
+  {/* Link to the BookLawyerAppointment page */}
+  <Link to="/BookLawyearAppointment">
+
+      <button className="mt-4 px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white rounded-lg lg:text-lg font-semibold hover:from-green-500 hover:to-green-600 transition-all duration-300 transform hover:scale-105">
+        Book Appointment
+      </button>
+ 
+  </Link>
+</div>
         </div>
 
         {/* Peel */}

@@ -18,6 +18,8 @@ import LogIn from "./Components/LogIn/LogIn";
 import AppointLawyears from "./Pages/AppointLawyears/AppointLawyears";
 import ForLawyears from "./Pages/ForLawyears/ForLawyears";
 import SignupLawyear from "./Pages/ForLawyears/SignupLawyear";
+import WaitingRoom from "./Pages/WaitingRoom/WaitingRoom";
+import BookLawyearAppointment from "./Pages/BookLawyearAppointment/BookLawyearAppointment";
 
 
 function Layout() {
@@ -41,6 +43,8 @@ const router = createBrowserRouter(
       <Route path="/AppointLawyears" element={<AppointLawyears />} />
       <Route path="/ForLawyears" element={<ForLawyears />} />
       <Route path="/SignupLawyear" element={<SignupLawyear />} />
+      <Route path="/WaitingRoom" element={<WaitingRoom />} />
+      <Route path="/BookLawyearAppointment" element={<BookLawyearAppointment />} />
     </Route>
   )
 );

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const OurServices = () => {
   const services = [
     {
-      title: "Live Consultation",
+      title: "Waiting Room",
       description: "",
       imgSrc: "./img/1.jpg",
-      link: "/",
+      link: "/WaitingRoom",
     },
     {
       title: "Appoint Lawyers",

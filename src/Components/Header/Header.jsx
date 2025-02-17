@@ -33,7 +33,7 @@ const Header = () => {
               Contact Us
             </a>
             <a
-              href="/"
+              href="/WaitingRoom"
               className="hover:text-blue-600 transition-colors"
             >
               Schedule
