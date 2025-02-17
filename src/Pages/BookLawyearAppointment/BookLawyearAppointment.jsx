@@ -69,8 +69,8 @@ const BookLawyerAppointment = () => {
             <span className="text-red-500">*</span>
           </label>
           <div className="flex items-center border border-blue-500 rounded-lg overflow-hidden mt-3 bg-gray-50">
-            <span className="px-4 md:py-3 bg-blue-500 text-white font-medium ">
-              🇧🇩 +88
+            <span className="px-4 py-3 bg-blue-500 text-white font-medium ">
+              +880
             </span>
             <input
               type="Number"
