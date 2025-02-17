@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ForLawyears = () => {
   return (
@@ -18,11 +19,11 @@ const ForLawyears = () => {
         <p className="mt-4 text-lg md:text-xl text-gray-700">
           Enroll yourself in just minutes!
         </p>
-        <a href="/SignupLawyear">
+        <Link to="/SignupLawyear">
           <button className="mt-8 px-8 py-4 bg-gradient-to-r from-indigo-600 to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-indigo-800 transition duration-300">
             Sign up now
           </button>
-        </a>
+        </Link>
       </div>
 
       {/* Right Section */}

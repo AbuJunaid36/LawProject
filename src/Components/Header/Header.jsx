@@ -38,12 +38,12 @@ const Header = () => {
             >
               Schedule
             </a>
-            <a
-              href="/ForLawyears"
+            <Link
+              to="/ForLawyears"
               className="hover:text-blue-600 transition-colors"
             >
               For Lawyears
-            </a>
+            </Link>
           </nav>
 
           {/* Login button */}
@@ -110,13 +110,13 @@ const Header = () => {
               >
                 Schedule
               </a>
-              <a
-                href="/ForLawyears"
+              <Link
+                to="/ForLawyears"
                 className="hover:text-blue-600 transition-colors"
                 onClick={closeMobileMenu}
               >
                 For Lawyears
-              </a>
+              </Link>
               <Link
                 to="/LogIn"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm transition-all mt-2"
