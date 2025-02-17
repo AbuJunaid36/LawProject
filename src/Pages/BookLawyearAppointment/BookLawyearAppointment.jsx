@@ -18,7 +18,7 @@ const appointmentData = {
       { label: "Consultation Fee", amount: "৳476.2" },
       { label: "VAT (5%)", amount: "৳23.81" },
     ],
-    total: { label: "Net Amount", amount: "৳500" },
+    total: { label: "Total Amount", amount: "৳500" },
   },
   lawyerInfo: {
     name: "Assoc. Prof. Dr. Muhammed Ashraful Alam Bhuiyan",
@@ -59,6 +59,33 @@ const BookLawyerAppointment = () => {
     <div className="flex flex-col md:flex-row gap-4 py-4 w-[90%] md:w-[80%] mx-auto min-h-screen mb-16 md:mb-0">
       {/* Left Side */}
       <div className="flex flex-col gap-4 w-full md:w-2/3 order-2 md:order-1">
+        {/* Document */}
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
+            Case Details
+          </h2>
+          <label className="block mt-4 text-gray-600 font-medium text-lg">
+            Reason
+          </label>
+          <input
+            type="text"
+            className="w-full p-2 border rounded-lg mt-2"
+            placeholder="Enter reason"
+          />
+          <label className="block mt-4 text-gray-600 font-medium text-lg">
+            Which District
+          </label>
+          <input
+            type="text"
+            className="w-full p-2 border rounded-lg mt-2"
+            placeholder="Enter district"
+          />
+          <label className="block mt-4 text-gray-600 font-medium text-lg">
+            Any Document
+          </label>
+          <input type="file" className="w-full p-2 border rounded-lg mt-2" />
+        </div>
+
         {/* Patient Selection */}
         <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
@@ -69,13 +96,13 @@ const BookLawyerAppointment = () => {
             <span className="text-red-500">*</span>
           </label>
           <div className="flex items-center border border-blue-500 rounded-lg overflow-hidden mt-3 bg-gray-50">
-            <span className="px-4 py-3 bg-blue-500 text-white font-medium ">
+            <span className="px-4 py-2 bg-blue-500 text-white font-medium ">
               +880
             </span>
             <input
               type="Number"
               placeholder={appointmentData.patientSelection.placeholder}
-              className="flex-1 p-3 outline-none bg-transparent text-gray-700"
+              className="flex-1 p-2 outline-none bg-transparent text-gray-700"
             />
           </div>
           <p className="text-sm text-gray-500 mt-3">
@@ -94,7 +121,7 @@ const BookLawyerAppointment = () => {
           {/* Send OTP Button */}
           <button
             onClick={handleSendOtp}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
           >
             {appointmentData.patientSelection.buttonText}
           </button>
@@ -124,7 +151,7 @@ const BookLawyerAppointment = () => {
               {/* OTP Submit Button */}
               <button
                 onClick={handleOtpSubmit}
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
+                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
               >
                 Submit OTP
               </button>
@@ -133,7 +160,7 @@ const BookLawyerAppointment = () => {
         </div>
 
         {/* Payment Details */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 block md:hidden">
           <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
             {appointmentData.paymentDetails.title}
           </h2>
@@ -155,7 +182,7 @@ const BookLawyerAppointment = () => {
 
       {/* Right Side - Lawyer Profile */}
       <div className="w-full md:w-1/3 order-1 md:order-2">
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-left flex">
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 text-left flex md:mb-4">
           <div className="relative mr-6">
             <img
               src={appointmentData.lawyerInfo.image}
@@ -173,6 +200,26 @@ const BookLawyerAppointment = () => {
             <span className="bg-blue-600 text-white px-4 py-1 rounded-lg mt-3 inline-block text-sm shadow-md">
               {appointmentData.lawyerInfo.specialty}
             </span>
+          </div>
+        </div>
+
+        {/* Payment Details */}
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hidden md:block">
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
+            {appointmentData.paymentDetails.title}
+          </h2>
+          <div className="mt-4 text-gray-800">
+            {appointmentData.paymentDetails.items.map((item, index) => (
+              <p key={index} className="flex justify-between text-lg">
+                {item.label} <span className="font-medium">{item.amount}</span>
+              </p>
+            ))}
+            <p className="flex justify-between font-bold text-xl mt-4 border-t pt-4">
+              {appointmentData.paymentDetails.total.label}{" "}
+              <span className="text-blue-600">
+                {appointmentData.paymentDetails.total.amount}
+              </span>
+            </p>
           </div>
         </div>
       </div>
