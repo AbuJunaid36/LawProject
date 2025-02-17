@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
   const services = [
@@ -6,27 +7,32 @@ const OurServices = () => {
       title: "Live Consultation",
       description: "",
       imgSrc: "./img/1.jpg",
+      link: "/",
     },
     {
       title: "Appoint Lawyers",
       description: "",
       imgSrc: "./img/2.png",
+      link: "/AppointLawyears",
     },
     {
       title: "Document Check",
       description: "",
       imgSrc: "./img/3.png",
+      link: "/",
     },
     {
       title: "Fact-check of your case",
       description: "",
       imgSrc: "./img/4.png",
+      link: "/",
     },
     {
       title: "Legal IT Services",
       description: "",
       imgSrc:
         "./img/law-firm-services-with-justice-legal-advice-judgement-and-lawyer-consultant-in-flat-cartoon-poster-hand-drawn-templates-illustration-vector.jpg",
+      link: "/",
     },
   ];
 
@@ -36,11 +42,11 @@ const OurServices = () => {
         Legal Services
       </h2>
 
-      <div className="flex justify-between lg:grid-cols-5 overflow-y-hidden custom-scrollbar space-x-6 p-4  md:p-8  ">
+      <div className="flex justify-between lg:grid-cols-5 overflow-y-hidden custom-scrollbar space-x-6 p-4 md:p-8">
         {services.map((service, index) => (
-          <a
-            href="/"
+          <Link
             key={index}
+            to={service.link} 
             className="relative group min-w-[140px] md:w-[300px] h-[150px] sm:h-[200px] md:h-[300px] bg-center bg-cover rounded-lg shadow-sm border border-gray-200 hover:border-blue-500 transition-all duration-500"
             style={{ backgroundImage: `url(${service.imgSrc})` }}
           >
@@ -51,7 +57,7 @@ const OurServices = () => {
               </h3>
               <p className="text-sm font-normal mt-2">{service.description}</p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </div>

@@ -15,6 +15,7 @@ import LawyearDetails from "./Pages/LawyearDetails/LawyearDetails";
 import MobileNav from "./Components/MobileNav/MobileNav";
 import AllLawyears from "./Pages/AllLawyears/AllLawyears";
 import LogIn from "./Components/LogIn/LogIn";
+import AppointLawyears from "./Pages/AppointLawyears/AppointLawyears";
 
 
 function Layout() {
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
       <Route path="/LawyearDetails" element={<LawyearDetails />} />
       <Route path="/AllLawyears" element={<AllLawyears />} />
       <Route path="/LogIn" element={<LogIn />} />
+      <Route path="/AppointLawyears" element={<AppointLawyears />} />
     </Route>
   )
 );
