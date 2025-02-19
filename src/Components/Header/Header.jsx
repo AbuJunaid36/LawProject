@@ -32,12 +32,12 @@ const Header = () => {
             >
               Contact Us
             </a>
-            <a
-              href="/WaitingRoom"
+            <Link
+              to="/WaitingRoom"
               className="hover:text-blue-600 transition-colors"
             >
               Schedule
-            </a>
+            </Link>
             <Link
               to="/ForLawyears"
               className="hover:text-blue-600 transition-colors"
