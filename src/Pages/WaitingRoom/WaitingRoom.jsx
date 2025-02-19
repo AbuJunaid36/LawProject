@@ -32,7 +32,8 @@ const WaitingRoom = () => {
   return (
     <div className="md:w-[90%] mx-auto p-6 min-h-screen mb-20">
       <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Waiting Room</h2>
-      <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6">
+      <div className="bg-white shadow-lg rounded-lg overflow-hidden p-6 overflow-x-auto">
+        {/* Desktop View */}
         <div className="hidden md:block">
           <table className="w-full border-collapse text-left">
             <thead>
@@ -75,6 +76,45 @@ const WaitingRoom = () => {
             </tbody>
           </table>
         </div>
+
+        {/* Mobile View */}
+        <div className="md:hidden space-y-6">
+          {waitingList.map(item => (
+            <div key={item.id} className="border rounded-lg p-4 shadow-md">
+              <div className="flex items-center gap-4">
+                <img src={item.image} alt={item.lawyerName} className="w-14 h-14 rounded-full border border-gray-300" />
+                <div>
+                  <p className="text-lg font-semibold text-gray-700">{item.lawyerName}</p>
+                  <p className="text-sm text-gray-500">{item.degree}</p>
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-gray-700 font-semibold">Stage</h3>
+                <div className="flex flex-col items-start space-y-2">
+                  {["Scheduled", "Pending", "Accepted"].map((stage, index) => (
+                    <div key={index} className="flex items-center">
+                      <span className={`px-4 py-2 rounded-lg text-sm font-medium shadow-md transition-all ${
+                        item.stage === stage ?
+                          (stage === "Scheduled" ? "bg-blue-500 text-white" : stage === "Pending" ? "bg-yellow-500 text-white" : "bg-green-500 text-white")
+                          : "bg-gray-200 text-gray-600"
+                      }`}>
+                        {stage}
+                      </span>
+                      {index < 2 && <div className="h-6 border-l-2 border-dotted border-gray-400 mx-2"></div>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-4 text-gray-600">
+                <p><strong>Date & Time:</strong> {item.date} at {item.time}</p>
+                <p><strong>Time Left:</strong> {formatTimeLeft(item.timeLeft, item.stage)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   );
