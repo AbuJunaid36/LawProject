@@ -88,29 +88,27 @@ const BookLawyerAppointment = () => {
 
         {/* Payment Details */}
         <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-  <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
-    {appointmentData.paymentDetails.title}
-  </h2>
-  <div className="mt-4 text-gray-800">
-    {appointmentData.paymentDetails.items.map((item, index) => (
-      <p key={index} className="flex justify-between text-lg">
-        {item.label} <span className="font-medium">{item.amount}</span>
-      </p>
-    ))}
-    <p className="flex justify-between font-bold text-xl mt-4 border-t pt-4">
-      {appointmentData.paymentDetails.total.label}{" "}
-      <span className="text-blue-600">
-        {appointmentData.paymentDetails.total.amount}
-      </span>
-    </p>
-  </div>
-  {/* Make Payment Button */}
-  <button
-    className="mt-6 w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg text-lg font-semibold"
-  >
-    Make Payment
-  </button>
-</div>
+          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
+            {appointmentData.paymentDetails.title}
+          </h2>
+          <div className="mt-4 text-gray-800">
+            {appointmentData.paymentDetails.items.map((item, index) => (
+              <p key={index} className="flex justify-between text-lg">
+                {item.label} <span className="font-medium">{item.amount}</span>
+              </p>
+            ))}
+            <p className="flex justify-between font-bold text-xl mt-4 border-t pt-4">
+              {appointmentData.paymentDetails.total.label}{" "}
+              <span className="text-blue-600">
+                {appointmentData.paymentDetails.total.amount}
+              </span>
+            </p>
+          </div>
+          {/* Make Payment Button */}
+          <button className="mt-6 w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg text-lg font-semibold">
+            Make Payment
+          </button>
+        </div>
       </div>
 
       {/* Right Side - Lawyer Profile */}
