@@ -36,7 +36,7 @@ const Header = () => {
               to="/WaitingRoom"
               className="hover:text-blue-600 transition-colors"
             >
-              Schedule
+              Waiting Room
             </Link>
             <Link
               to="/ForLawyears"

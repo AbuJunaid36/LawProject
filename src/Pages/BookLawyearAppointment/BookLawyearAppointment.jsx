@@ -86,98 +86,31 @@ const BookLawyerAppointment = () => {
           <input type="file" className="w-full p-2 border rounded-lg mt-2" />
         </div>
 
-        {/* Patient Selection */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
-            {appointmentData.patientSelection.title}
-          </h2>
-          <label className="block mt-4 text-gray-600 font-medium text-lg">
-            {appointmentData.patientSelection.label}{" "}
-            <span className="text-red-500">*</span>
-          </label>
-          <div className="flex items-center border border-blue-500 rounded-lg overflow-hidden mt-3 bg-gray-50">
-            <span className="px-4 py-2 bg-blue-500 text-white font-medium ">
-              +880
-            </span>
-            <input
-              type="Number"
-              placeholder={appointmentData.patientSelection.placeholder}
-              className="flex-1 p-2 outline-none bg-transparent text-gray-700"
-            />
-          </div>
-          <p className="text-sm text-gray-500 mt-3">
-            {appointmentData.patientSelection.terms}{" "}
-            {appointmentData.patientSelection.termsLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                className="text-blue-600 font-medium hover:underline"
-              >
-                {link.text}
-              </a>
-            ))}
-          </p>
-
-          {/* Send OTP Button */}
-          <button
-            onClick={handleSendOtp}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
-          >
-            {appointmentData.patientSelection.buttonText}
-          </button>
-
-          {/* OTP Input Field (appears after Send OTP button is clicked) */}
-          {otpSent && (
-            <div className="mt-5">
-              <label className="block text-gray-600 font-medium text-lg">
-                Enter OTP <span className="text-red-500">*</span>
-              </label>
-              <div className="flex border border-blue-500 rounded-lg mt-3 bg-gray-50">
-                <input
-                  type="text"
-                  maxLength="6"
-                  value={otp}
-                  onChange={handleOtpChange}
-                  placeholder="Enter OTP"
-                  className="flex-1 p-3 outline-none bg-transparent text-gray-700 text-center"
-                />
-              </div>
-
-              {/* OTP Error Message */}
-              {otpError && (
-                <p className="text-red-500 text-sm mt-2">{otpError}</p>
-              )}
-
-              {/* OTP Submit Button */}
-              <button
-                onClick={handleOtpSubmit}
-                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg mt-5 w-full font-medium text-lg shadow-md transition-all"
-              >
-                Submit OTP
-              </button>
-            </div>
-          )}
-        </div>
-
         {/* Payment Details */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 block md:hidden">
-          <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
-            {appointmentData.paymentDetails.title}
-          </h2>
-          <div className="mt-4 text-gray-800">
-            {appointmentData.paymentDetails.items.map((item, index) => (
-              <p key={index} className="flex justify-between text-lg">
-                {item.label} <span className="font-medium">{item.amount}</span>
-              </p>
-            ))}
-            <p className="flex justify-between font-bold text-xl mt-4 border-t pt-4">
-              {appointmentData.paymentDetails.total.label}{" "}
-              <span className="text-blue-600">
-                {appointmentData.paymentDetails.total.amount}
-              </span>
-            </p>
-          </div>
-        </div>
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+  <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
+    {appointmentData.paymentDetails.title}
+  </h2>
+  <div className="mt-4 text-gray-800">
+    {appointmentData.paymentDetails.items.map((item, index) => (
+      <p key={index} className="flex justify-between text-lg">
+        {item.label} <span className="font-medium">{item.amount}</span>
+      </p>
+    ))}
+    <p className="flex justify-between font-bold text-xl mt-4 border-t pt-4">
+      {appointmentData.paymentDetails.total.label}{" "}
+      <span className="text-blue-600">
+        {appointmentData.paymentDetails.total.amount}
+      </span>
+    </p>
+  </div>
+  {/* Make Payment Button */}
+  <button
+    className="mt-6 w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg text-lg font-semibold"
+  >
+    Make Payment
+  </button>
+</div>
       </div>
 
       {/* Right Side - Lawyer Profile */}
@@ -204,7 +137,7 @@ const BookLawyerAppointment = () => {
         </div>
 
         {/* Payment Details */}
-        <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hidden md:block">
+        {/* <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hidden md:block">
           <h2 className="text-2xl font-bold flex items-center gap-2 text-gray-700">
             {appointmentData.paymentDetails.title}
           </h2>
@@ -221,7 +154,7 @@ const BookLawyerAppointment = () => {
               </span>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
