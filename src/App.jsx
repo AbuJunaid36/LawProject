@@ -46,7 +46,7 @@ const router = createBrowserRouter(
       <Route path="/SignupLawyear" element={<SignupLawyear />} />
       <Route path="/WaitingRoom" element={<WaitingRoom />} />
       <Route path="/BookLawyearAppointment" element={<BookLawyearAppointment />} />
-      {/* <Route path="/DocumentCheck" element={<DocumentCheck />} /> */}
+      <Route path="/DocumentCheck" element={<DocumentCheck />} />
     </Route>
   )
 );
