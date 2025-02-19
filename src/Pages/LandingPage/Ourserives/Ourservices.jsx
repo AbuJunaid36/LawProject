@@ -19,13 +19,13 @@ const OurServices = () => {
       title: "Document Check",
       description: "",
       imgSrc: "./img/3.png",
-      link: "/",
+      link: "/DocumentCheck",
     },
     {
-      title: "Fact-check of your case",
+      title: "Factcheck of your case",
       description: "",
       imgSrc: "./img/4.png",
-      link: "/",
+      link: "/FactCheck",
     },
     {
       title: "Legal IT Services",
