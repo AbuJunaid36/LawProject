@@ -22,7 +22,7 @@ const OurServices = () => {
       link: "/DocumentCheck",
     },
     {
-      title: "Factcheck of your case",
+      title: "Fact-check of your case",
       description: "",
       imgSrc: "./img/4.png",
       link: "/FactCheck",
@@ -46,16 +46,18 @@ const OurServices = () => {
         {services.map((service, index) => (
           <Link
             key={index}
-            to={service.link} 
-            className="relative group min-w-[140px] md:w-[300px] h-[150px] sm:h-[200px] md:h-[300px] bg-center bg-cover rounded-lg shadow-sm border border-gray-200 hover:border-blue-500 transition-all duration-500"
+            to={service.link}
+            className="relative group min-w-[140px] md:w-[300px] h-[150px] sm:h-[200px] md:h-[300px] bg-center bg-cover rounded-2xl shadow-md border border-gray-200 hover:shadow-xl hover:border-blue-500 transition-all duration-500 ease-in-out transform hover:scale-105"
             style={{ backgroundImage: `url(${service.imgSrc})` }}
           >
             {/* Text Content */}
-            <div className="absolute bottom-0 flex flex-col items-center justify-center text-center bg-white/80 sm:group-hover:bg-white p-3 rounded-b-lg transition-all duration-500 ease-in-out transform sm:group-hover:translate-y-0 sm:group-hover:pb-[30px] w-full">
-              <h3 className="text-lg font-bold text-gray-900">
+            <div className="absolute bottom-0 flex flex-col items-center justify-center text-center bg-white/50 backdrop-blur-md sm:group-hover:bg-white/70 p-4 rounded-b-2xl transition-all duration-500 ease-in-out transform sm:group-hover:translate-y-0 sm:group-hover:pb-[30px] w-full">
+              <h3 className="text-lg font-semibold text-gray-900 drop-shadow-md">
                 {service.title}
               </h3>
-              <p className="text-sm font-normal mt-2">{service.description}</p>
+              <p className="text-sm font-normal mt-2 text-gray-700">
+                {service.description}
+              </p>
             </div>
           </Link>
         ))}

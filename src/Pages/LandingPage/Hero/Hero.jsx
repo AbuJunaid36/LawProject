@@ -3,9 +3,9 @@ import React from "react";
 const hero = () => {
   return (
     <div>
-      <section className=" pt-5  rounded-lg">
+      <section className=" pt-4  rounded-lg">
         {/* Search Bar */}
-        <div className="mb-6  mx-auto w-[90%] md:w-[80%]">
+        <div className="mb-6  mx-auto w-[95%] md:w-[80%]">
           <div className="relative">
             <input
               type="text"
@@ -33,7 +33,7 @@ const hero = () => {
 
         {/* Hero Section */}
         <div className="flex-1">
-          <div className="relative w-[90%] md:w-[80%] h-36 md:h-80 lg:h-[450px] mx-auto">
+          <div className="relative w-[95%] md:w-[80%] h-36 md:h-80 lg:h-[450px] mx-auto">
             <img
               src="img/Untitled-1.jpg"
               alt="App Screenshot"

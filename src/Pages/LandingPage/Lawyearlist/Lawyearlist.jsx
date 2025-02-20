@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../App.css";
 import { Link } from "react-router-dom";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Lawyearlist = () => {
   const [visibleCards, setVisibleCards] = useState(4); // Initially show 4 cards
@@ -71,12 +72,12 @@ const Lawyearlist = () => {
   };
 
   return (
-    <div className="mx-auto w-[90%] md:w-[80%] custom-scrollbar mb-8">
+    <div className="mx-auto w-[95%] md:w-[80%] custom-scrollbar mb-8">
       <div className="flex items-center justify-between mb-2 md:mb-4">
         <h2 className="text-2xl md:text-6xl font-bold text-gray-800  flex justify-center">
           Popular Lawyears
         </h2>
-        <Link to="/AllLawyears">
+        <Link to="/AppointLawyears">
           <p className="flex items-center md:gap-1 text-blue-600 hover:text-blue-800 cursor-pointer transition">
             See All <IoIosArrowRoundForward className="text-xl" />
           </p>
@@ -114,9 +115,15 @@ const Lawyearlist = () => {
                   {doctor.vat}
                 </span>
               </p>
-              <button className="mt-1 bg-blue-500 text-white px-5 py-2 rounded-lg text-xs w-full font-bold lg:text-sm lg:px-6 lg:py-3">
-                Book Appointment
-              </button>
+              <Link to="/BookLawyearAppointment">
+                <button
+                  className="mt-1 border-2 border-blue-500 px-6 py-2 rounded-md w-full font-semibold text-sm lg:text-md flex items-center justify-center gap-2 transition-all duration-300 hover:bg-blue-500 hover:text-white hover:shadow-md whitespace-nowrap 
+  bg-blue-500 text-white sm:bg-transparent sm:text-blue-500"
+                >
+                  Book Appointment
+                  <IoIosArrowForward className="text-lg lg:text-xl font-semibold transition-all duration-300 group-hover:translate-x-1" />
+                </button>
+              </Link>
             </div>
           </Link>
         ))}
@@ -124,7 +131,7 @@ const Lawyearlist = () => {
 
       {/* See More Button */}
       {visibleCards < doctors.length && window.innerWidth < 1024 && (
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-6">
           <button
             onClick={loadMoreCards}
             className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-bold lg:px-6 lg:py-3 lg:text-md"

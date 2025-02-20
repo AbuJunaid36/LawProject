@@ -42,7 +42,7 @@ const WaitingRoom = () => {
   const currentStageIndex = steps.indexOf(waitingList[0].stage);
 
   return (
-    <div className="w-[90%] md:w-[80%] mx-auto p-6 min-h-screen">
+    <div className="w-[95%] md:w-[80%] mx-auto p-6 min-h-screen">
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
         Waiting Room
       </h2>
@@ -52,26 +52,23 @@ const WaitingRoom = () => {
       <div className="flex justify-center  mb-6 mx-auto w-full ">
         {steps.map((step, index) => (
           <div key={index} className="relative flex-1 flex items-center">
-            
             <div className="flex flex-col">
-            {/* Step Indicator */}
-            <div
-              className={`w-12 h-12 flex items-center justify-center rounded-full z-10 
+              {/* Step Indicator */}
+              <div
+                className={`w-12 h-12 flex items-center justify-center rounded-full z-10 
                 transition duration-300 ease-in-out 
                 ${
                   index <= currentStageIndex
                     ? "bg-blue-600 text-white shadow-lg scale-110"
                     : "bg-gray-200 text-gray-500 hover:bg-gray-300"
                 }`}
-            >
-              {index + 1}
+              >
+                {index + 1}
+              </div>
+
+              {/* Step Name */}
+              <p className="mt-2 text-sm font-medium text-gray-700">{step}</p>
             </div>
-
-
-            {/* Step Name */}
-            <p className="mt-2 text-sm font-medium text-gray-700">{step}</p>
-            </div>
-
 
             {/* Dotted Line - Only show if not the last step */}
             {index !== steps.length - 1 && (
@@ -81,15 +78,7 @@ const WaitingRoom = () => {
         ))}
       </div>
 
-
-
       {/*  */}
-
-
-
-
-
-
 
       {/* <div className="flex justify-center mb-6 w-full">
         <div className="flex w-full max-w-lg items-center justify-between relative">
@@ -115,15 +104,7 @@ const WaitingRoom = () => {
         </div>
       </div> */}
 
-
       {/*  */}
-
-
-
-
-
-
-
 
       {/* Profile & Timer Section */}
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">

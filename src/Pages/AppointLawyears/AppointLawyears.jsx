@@ -63,7 +63,7 @@ const AppointLawyears = () => {
   });
 
   return (
-    <div className="mb-20 md:mb-0 w-[90%] md:w-[80%] mx-auto flex flex-col md:flex-row gap-6">
+    <div className="mb-20 md:mb-0 w-[95%] md:w-[80%] mx-auto flex flex-col md:flex-row gap-6">
       {/* Filter Button for Mobile */}
       <button
         className="md:hidden flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md shadow-md w-full"

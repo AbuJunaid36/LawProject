@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 const appointmentData = {
   patientSelection: {
@@ -29,9 +29,13 @@ const appointmentData = {
 };
 
 const BookLawyerAppointment = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 py-4 w-[90%] md:w-[80%] mx-auto min-h-screen mb-16 md:mb-0">
+    <div className="flex flex-col md:flex-row gap-4 py-4 w-[95%] md:w-[80%] mx-auto min-h-screen mb-16 md:mb-0">
       {/* Left Side */}
       <div className="flex flex-col gap-4 w-full md:w-2/3 order-2 md:order-1">
         {/* Document */}

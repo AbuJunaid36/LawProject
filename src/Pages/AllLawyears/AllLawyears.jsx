@@ -56,10 +56,10 @@ const AllLawyears = () => {
 
   return (
     <div className="mb-20 md:mb-0">
-      <div className="text-2xl md:text-4xl font-bold w-[90%] md:w-[80%] mx-auto mt-4  shadow-[0_3px_5px_rgb(0,0,0,0.1)] rounded-xl p-4">
+      <div className="text-2xl md:text-4xl font-bold w-[95%] md:w-[80%] mx-auto mt-4  shadow-[0_3px_5px_rgb(0,0,0,0.1)] rounded-xl p-4">
         <p>Lawyears</p>
       </div>
-      <div className="w-[90%] md:w-[80%] mx-auto mt-4">
+      <div className="w-[95%] md:w-[80%] mx-auto mt-4">
         {doctors.map((doctor) => (
           <Link to="/LawyearDetails" className="block">
             <div className="bg-white shadow-lg rounded-xl p-4 md:p-6 flex flex-row items-center space-x-4 w-full border flex-wrap mb-4 cursor-pointer hover:shadow-xl transition">
