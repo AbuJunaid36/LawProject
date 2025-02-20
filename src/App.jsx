@@ -21,6 +21,8 @@ import SignupLawyear from "./Pages/ForLawyears/SignupLawyear";
 import WaitingRoom from "./Pages/WaitingRoom/WaitingRoom";
 import BookLawyearAppointment from "./Pages/BookLawyearAppointment/BookLawyearAppointment";
 import DocumentCheck from "./Pages/DocumentCheck/DocumentCheck";
+import FactChect from "./Pages/FactCheck/FactCheck";
+import FactCheck from "./Pages/FactCheck/FactCheck";
 
 
 function Layout() {
@@ -47,6 +49,7 @@ const router = createBrowserRouter(
       <Route path="/WaitingRoom" element={<WaitingRoom />} />
       <Route path="/BookLawyearAppointment" element={<BookLawyearAppointment />} />
       <Route path="/DocumentCheck" element={<DocumentCheck />} />
+      <Route path="/FactCheck" element={<FactCheck />} />
     </Route>
   )
 );

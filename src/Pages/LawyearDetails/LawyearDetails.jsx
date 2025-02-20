@@ -106,7 +106,7 @@ const LawyearDetails = () => {
                     <p className="text-sm text-gray-600">{review.date}</p>
                   </div>
                 </div>
-    
+
                 {/* Rating */}
                 <div className="flex items-center mt-2">
                   {[...Array(5)].map((_, i) => (
@@ -118,9 +118,11 @@ const LawyearDetails = () => {
                     />
                   ))}
                 </div>
-    
+
                 {/* Comment */}
-                <p className="mt-2 text-gray-700 lg:text-lg">{review.comment}</p>
+                <p className="mt-2 text-gray-700 lg:text-lg">
+                  {review.comment}
+                </p>
               </div>
             ))}
           </div>
@@ -252,42 +254,44 @@ const LawyearDetails = () => {
 
               {/* Other Details */}
               <div className="mt-4 border-t pt-4 space-y-3">
-  {[
-    {
-      label: "Consultation Fee",
-      value: `৳${doctorData.consultationFee}`,
-    },
-    {
-      label: "Follow-Up Fee",
-      value: `৳${doctorData.followUpFee} (Within 7 days)`,
-    },
-    {
-      label: "Patients Attended",
-      value: doctorData.patientsAttended,
-    },
-    {
-      label: "Avg. Consultation Time",
-      value: doctorData.avgConsultationTime,
-    },
-    {
-      label: "Joined Website name",
-      value: doctorData.joinedDate,
-    },
-    { label: "Doctor Code", value: doctorData.doctorCode },
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-200"
-    >
-      {/* Label on the left */}
-      <span className="text-gray-700 lg:text-lg">{item.label}</span>
-      {/* Value on the right */}
-      <span className="text-blue-600 font-semibold text-right">
-        {item.value}
-      </span>
-    </div>
-  ))}
-</div>
+                {[
+                  {
+                    label: "Consultation Fee",
+                    value: `৳${doctorData.consultationFee}`,
+                  },
+                  {
+                    label: "Follow-Up Fee",
+                    value: `৳${doctorData.followUpFee} (Within 7 days)`,
+                  },
+                  {
+                    label: "Patients Attended",
+                    value: doctorData.patientsAttended,
+                  },
+                  {
+                    label: "Avg. Consultation Time",
+                    value: doctorData.avgConsultationTime,
+                  },
+                  {
+                    label: "Joined Website name",
+                    value: doctorData.joinedDate,
+                  },
+                  { label: "Doctor Code", value: doctorData.doctorCode },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-200"
+                  >
+                    {/* Label on the left */}
+                    <span className="text-gray-700 lg:text-lg">
+                      {item.label}
+                    </span>
+                    {/* Value on the right */}
+                    <span className="text-blue-600 font-semibold text-right">
+                      {item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
