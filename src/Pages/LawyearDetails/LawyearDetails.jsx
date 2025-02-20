@@ -74,26 +74,41 @@ const LawyearDetails = () => {
           <div className="space-y-4">
             {[
               {
+                name: "John Doe",
+                image: "/img/1Y1A2377-Photo-scaled.jpg", // Path to the reviewer's image
                 rating: 5,
                 comment: "Excellent doctor, very knowledgeable and caring.",
                 date: "2023-10-01",
               },
               {
+                name: "Jane Smith",
+                image: "/img/1Y1A2377-Photo-scaled.jpg", // Path to the reviewer's image
                 rating: 4,
                 comment: "Highly recommended for orthopedic issues.",
                 date: "2023-09-25",
-              },
-              {
-                rating: 5,
-                comment: "Great experience, very professional.",
-                date: "2023-09-20",
               },
             ].map((review, index) => (
               <div
                 key={index}
                 className="bg-gray-50 p-4 rounded-lg hover:bg-gray-100 transition-all duration-200"
               >
+                {/* Reviewer Info */}
                 <div className="flex items-center">
+                  {/* Reviewer Image */}
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
+                  {/* Reviewer Name and Date */}
+                  <div className="ml-3">
+                    <p className="text-gray-800 font-semibold">{review.name}</p>
+                    <p className="text-sm text-gray-600">{review.date}</p>
+                  </div>
+                </div>
+    
+                {/* Rating */}
+                <div className="flex items-center mt-2">
                   {[...Array(5)].map((_, i) => (
                     <FaStar
                       key={i}
@@ -102,13 +117,10 @@ const LawyearDetails = () => {
                       }`}
                     />
                   ))}
-                  <span className="ml-2 text-sm text-gray-600">
-                    {review.date}
-                  </span>
                 </div>
-                <p className="mt-2 text-gray-700 lg:text-lg">
-                  {review.comment}
-                </p>
+    
+                {/* Comment */}
+                <p className="mt-2 text-gray-700 lg:text-lg">{review.comment}</p>
               </div>
             ))}
           </div>
@@ -240,42 +252,42 @@ const LawyearDetails = () => {
 
               {/* Other Details */}
               <div className="mt-4 border-t pt-4 space-y-3">
-                {[
-                  {
-                    label: "Consultation Fee",
-                    value: `৳${doctorData.consultationFee}`,
-                  },
-                  {
-                    label: "Follow-Up Fee",
-                    value: `৳${doctorData.followUpFee} (Within 7 days)`,
-                  },
-                  {
-                    label: "Patients Attended",
-                    value: doctorData.patientsAttended,
-                  },
-                  {
-                    label: "Avg. Consultation Time",
-                    value: doctorData.avgConsultationTime,
-                  },
-                  {
-                    label: "Joined Website name",
-                    value: doctorData.joinedDate,
-                  },
-                  { label: "Doctor Code", value: doctorData.doctorCode },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-200"
-                  >
-                    <span className="text-gray-700 lg:text-lg">
-                      {item.label}
-                    </span>
-                    <span className="text-blue-600 font-semibold">
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
+  {[
+    {
+      label: "Consultation Fee",
+      value: `৳${doctorData.consultationFee}`,
+    },
+    {
+      label: "Follow-Up Fee",
+      value: `৳${doctorData.followUpFee} (Within 7 days)`,
+    },
+    {
+      label: "Patients Attended",
+      value: doctorData.patientsAttended,
+    },
+    {
+      label: "Avg. Consultation Time",
+      value: doctorData.avgConsultationTime,
+    },
+    {
+      label: "Joined Website name",
+      value: doctorData.joinedDate,
+    },
+    { label: "Doctor Code", value: doctorData.doctorCode },
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-all duration-200"
+    >
+      {/* Label on the left */}
+      <span className="text-gray-700 lg:text-lg">{item.label}</span>
+      {/* Value on the right */}
+      <span className="text-blue-600 font-semibold text-right">
+        {item.value}
+      </span>
+    </div>
+  ))}
+</div>
             </div>
           </div>
         </div>
