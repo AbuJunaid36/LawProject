@@ -29,31 +29,6 @@ const appointmentData = {
 };
 
 const BookLawyerAppointment = () => {
-  // State to manage OTP visibility
-  const [otpSent, setOtpSent] = useState(false);
-  const [otp, setOtp] = useState("");
-  const [otpError, setOtpError] = useState(""); // State to manage OTP error
-
-  // Handle OTP input change
-  const handleOtpChange = (e) => setOtp(e.target.value);
-
-  // Handle Send OTP button click
-  const handleSendOtp = () => {
-    setOtpSent(true); // Show OTP input field after button click
-    setOtpError(""); // Reset OTP error when sending OTP
-  };
-
-  // Handle OTP submit
-  const handleOtpSubmit = () => {
-    // Simple OTP validation (checks for 6 digits)
-    if (otp.length !== 6) {
-      setOtpError("OTP must be 6 digits");
-    } else {
-      setOtpError(""); // Clear error if OTP is valid
-      // Add the logic for submitting OTP (like making an API request)
-      alert("OTP Submitted: " + otp); // For demonstration purposes
-    }
-  };
 
   return (
     <div className="flex flex-col md:flex-row gap-4 py-4 w-[90%] md:w-[80%] mx-auto min-h-screen mb-16 md:mb-0">
