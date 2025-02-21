@@ -51,11 +51,11 @@ const DocumentCheck = () => {
               (section, index) => (
                 <div
                   key={index}
-                  className={`text-center p-3 rounded-md font-semibold cursor-pointer transition-all border-2 border-blue-500
+                  className={`text-center p-2 md:p-3 rounded-md font-semibold cursor-pointer transition-all border-2 
         ${
           selectedSection === section
-            ? "bg-blue-500 text-white shadow-lg scale-105"
-            : "bg-white text-blue-500 hover:bg-blue-100"
+            ? " shadow-lg scale-105 bg-blue-500 text-white "
+            : " hover:bg-blue-100 bg-gray-200 text-gray-700 "
         } 
         ${
           section === "DOLIL UTTOLON"

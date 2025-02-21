@@ -35,22 +35,22 @@ const Services = () => {
               Legal services made easy for everyone
             </p>
             {/* Features List */}
-            <div className="space-y-6 mb-4 md:mb-8">
+            <div className="space-y-6 mb-4 ">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-4">
                   <div className="bg-gray-100 p-4 rounded-md">
                     <img
                       src={feature.icon}
                       alt={feature.alt}
-                      className="w-6 h-6"
+                      className="w-4 h-4"
                     />
                   </div>
                   <p className="text-gray-700 text-lg">{feature.text}</p>
                 </div>
               ))}
             </div>
-            <button className="mt-6 px-8 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-500 transition">
-              Apply for these services  
+            <button className="mt-6 px-8 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-500 transition whitespace-nowrap">
+              Apply for these services
             </button>
           </div>
 

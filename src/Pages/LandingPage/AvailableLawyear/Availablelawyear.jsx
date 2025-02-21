@@ -39,7 +39,7 @@ const Availablelawyear = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 py-4 md:py-12 px-4 my-10 md:my-20">
+      <div className="bg-gray-100 py-4 md:py-12 px-4 my-10 ">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-8">
           {/* Left Content */}
           <div className=" md:w-1/3">
@@ -54,11 +54,11 @@ const Availablelawyear = () => {
           {/* Right Content */}
 
           <div className="overflow-x-auto lg:overflow-x-hidden custom-scrollbar  w-full p-4">
-            <div className="flex lg:grid lg:grid-cols-3 lg:gap-6 md:w-max min-w-full gap-6 px-4 lg:px-0">
+            <div className="flex lg:grid lg:grid-cols-3 lg:gap-6 md:w-max min-w-full gap-6">
               {cardsData.map((card, index) => (
                 <div
                   key={index}
-                  className="bg-white shadow-lg rounded-lg p-6 hover:border-blue-500 border transition w-64 flex-shrink-0 lg:flex-shrink"
+                  className="bg-white shadow-lg rounded-lg p-4 md:p-6 hover:border-blue-500 border transition w-64 flex-shrink-0 lg:flex-shrink"
                 >
                   <div className="flex justify-center mb-4">
                     <img src={card.image} alt={card.title} className="h-20" />
