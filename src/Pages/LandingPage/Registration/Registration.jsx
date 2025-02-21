@@ -2,7 +2,7 @@ import React from "react";
 
 const Registration = () => {
   return (
-    <div>
+    <div className="hidden md:block">
       <section className="bg-blue-50 py-12">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
           {/* Header */}

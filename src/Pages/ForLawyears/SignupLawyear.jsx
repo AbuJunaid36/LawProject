@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { GoAlertFill } from "react-icons/go";
+
 const SignupLawyear = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -11,6 +13,7 @@ const SignupLawyear = () => {
     licenseNumber: "",
     phone: "",
     address: "",
+    document: null,
   });
 
   const [showOtpForm, setShowOtpForm] = useState(false);
@@ -22,9 +25,12 @@ const SignupLawyear = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, document: e.target.files[0] });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Send OTP
     setOtpSent(true);
     setShowOtpForm(true);
     console.log("Form Submitted", formData);
@@ -32,13 +38,12 @@ const SignupLawyear = () => {
 
   const handleOtpSubmit = (e) => {
     e.preventDefault();
-    // Validate OTP here
     console.log("OTP Submitted", otp);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  p-4 mb-20 md:mb-0">
-      <div className="bg-white p-8 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.1)] w-full max-w-3xl">
+    <div className="min-h-screen flex items-center justify-center p-4 mb-20 md:mb-0">
+      <div className="bg-white p-4 md:p-8 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.1)] w-full max-w-3xl">
         <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">
           Lawyer Sign-Up
         </h2>
@@ -52,7 +57,7 @@ const SignupLawyear = () => {
                 placeholder="Full Name"
                 value={formData.fullName}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
               <input
@@ -61,7 +66,7 @@ const SignupLawyear = () => {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
             </div>
@@ -73,7 +78,7 @@ const SignupLawyear = () => {
                 placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
               <input
@@ -82,7 +87,7 @@ const SignupLawyear = () => {
                 placeholder="Confirm Password"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
             </div>
@@ -94,7 +99,7 @@ const SignupLawyear = () => {
                 placeholder="Law Firm Name"
                 value={formData.lawFirm}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
               />
               <input
                 type="text"
@@ -102,7 +107,7 @@ const SignupLawyear = () => {
                 placeholder="Specialization"
                 value={formData.specialization}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
             </div>
@@ -114,7 +119,7 @@ const SignupLawyear = () => {
                 placeholder="License Number"
                 value={formData.licenseNumber}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
               <input
@@ -123,7 +128,7 @@ const SignupLawyear = () => {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+                className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
                 required
               />
             </div>
@@ -133,13 +138,27 @@ const SignupLawyear = () => {
               placeholder="Address"
               value={formData.address}
               onChange={handleChange}
-              className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
+              className="border rounded-lg p-3 md:p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
               required
             ></textarea>
 
+            {/* Document Upload Section */}
+            <div>
+              <input
+                type="file"
+                onChange={handleFileChange}
+                className="border rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-500 transition duration-200 mb-2"
+                required
+              />
+              <div className="flex items-center gap-2 text-sm md:text-md">
+                <GoAlertFill className="text-red-500" />
+                Please upload your official documents
+              </div>
+            </div>
+
             <button
               type="submit"
-              className="w-full py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+              className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
             >
               Submit
             </button>
@@ -162,7 +181,6 @@ const SignupLawyear = () => {
               className="border rounded-lg p-4 w-full focus:ring-2 focus:ring-blue-500 transition duration-200"
               required
             />
-
             <button
               type="submit"
               className="w-full py-4 bg-green-600 text-white font-semibold rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:bg-green-700 transition duration-300"

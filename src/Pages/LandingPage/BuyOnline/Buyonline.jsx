@@ -24,7 +24,7 @@ const Buyonline = () => {
               Dhaka city
             </p>
             <p className="text-sm text-gray-500 mb-4">*Conditions apply</p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-500 transition">
+            <button className="bg-blue-600 text-white px-8 py-2 md:py-3 rounded-md text-lg font-medium hover:bg-blue-500 transition">
               Buy Land
             </button>
           </div>

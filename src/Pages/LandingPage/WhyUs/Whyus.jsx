@@ -21,7 +21,7 @@ const Whyus = () => {
   ];
 
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="bg-white my-14 md:my-20 mx-auto w-[80%] ">
         <div className="grid grid-cols-1 lg:grid-cols-2  gap-10">
           {/* Left Image Section */}

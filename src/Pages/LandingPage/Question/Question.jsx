@@ -20,7 +20,7 @@ const Question = () => {
   };
 
   return (
-    <div>
+    <div className="hidden md:block">
       <div className="flex flex-col md:flex-row justify-between my-10 md: mx-auto w-[80%] gap-8">
         <div className="">
           <div className="text-3xl sm:text-6xl md:text-6xl mt-4 mb-4 font-bold text-gray-800">

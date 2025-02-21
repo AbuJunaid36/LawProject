@@ -34,7 +34,7 @@ const LandingPage = () => {
 
       <Whyus />
 
-      <section className="flex mx-auto flex-col lg:flex-row items-center bg-white w-[80%] my-10 md:my-40">
+      <section className="hidden md:flex mx-auto flex-col lg:flex-row items-center bg-white w-[80%] my-10 md:my-40  ">
         {/* Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left order-last lg:order-none">
           <h2 className="text-2xl md:text-6xl font-bold text-gray-800 leading-snug">

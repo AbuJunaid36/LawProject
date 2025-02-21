@@ -21,7 +21,6 @@ import SignupLawyear from "./Pages/ForLawyears/SignupLawyear";
 import WaitingRoom from "./Pages/WaitingRoom/WaitingRoom";
 import BookLawyearAppointment from "./Pages/BookLawyearAppointment/BookLawyearAppointment";
 import DocumentCheck from "./Pages/DocumentCheck/DocumentCheck";
-import FactChect from "./Pages/FactCheck/FactCheck";
 import FactCheck from "./Pages/FactCheck/FactCheck";
 
 

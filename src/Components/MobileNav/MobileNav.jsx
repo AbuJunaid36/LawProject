@@ -66,19 +66,23 @@ function MobileNav() {
         </Link>
 
         {/* Order Link */}
-        <Link to="/order" className="flex flex-col items-center group">
+        <Link to="/WaitingRoom" className="flex flex-col items-center group">
           <FaListAlt
             size={26}
             className={`${
-              location.pathname === "/order" ? "text-blue-500" : "text-gray-700"
+              location.pathname === "/WaitingRoom"
+                ? "text-blue-500"
+                : "text-gray-700"
             } group-hover:text-blue-500 transition duration-200 ease-in-out`}
           />
           <span
             className={`text-xs ${
-              location.pathname === "/order" ? "text-blue-500" : "text-gray-600"
+              location.pathname === "/WaitingRoom"
+                ? "text-blue-500"
+                : "text-gray-600"
             } group-hover:text-blue-500 transition duration-200 ease-in-out`}
           >
-            Order
+            Schedule
           </span>
         </Link>
 
@@ -98,7 +102,6 @@ function MobileNav() {
             Menu
           </span>
         </Link>
-
 
         {/* Centered Law Icon */}
         {/* <Link

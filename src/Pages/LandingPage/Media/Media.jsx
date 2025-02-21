@@ -49,7 +49,7 @@ const Media = () => {
             Ainporamorsho in Mass Media
           </h2>
           {/* Parent container for horizontal scrolling */}
-          <div className="flex overflow-x-auto space-x-6 custom-scrollbar p-4">
+          <div className="flex overflow-x-auto space-x-6 custom-scrollbar  md:p-4">
             {articles.map((article) => (
               <div
                 key={article.id}

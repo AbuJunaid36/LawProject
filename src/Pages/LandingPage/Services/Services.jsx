@@ -20,7 +20,7 @@ const Services = () => {
   ];
 
   return (
-    <div>
+    <div className="hidden md:block">
       <section className="bg-white  my-10 md:my-20 px-6">
         <div className="w-[80%] mx-auto flex flex-col md:flex-row  justify-between space-y-10 md:space-y-0 gap-4">
           {/* Text Content */}

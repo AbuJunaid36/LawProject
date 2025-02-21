@@ -63,18 +63,10 @@ const AppointLawyears = () => {
   });
 
   return (
-    <div className="mb-20 md:mb-0 w-[95%] md:w-[80%] mx-auto flex flex-col md:flex-row gap-6">
-      {/* Filter Button for Mobile */}
-      <button
-        className="md:hidden flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md shadow-md w-full"
-        onClick={() => setShowFilter(!showFilter)}
-      >
-        <FiFilter /> Filter
-      </button>
-
+    <div className="mb-20 md:mb-0 w-[95%] md:w-[80%] mx-auto flex flex-col md:flex-row gap-6 pt-4">
       {/* Sidebar Filter */}
       <div
-        className={`w-full md:w-1/4 p-4 bg-white shadow-md rounded-lg md:my-4 ${
+        className={`w-full md:w-1/4 p-4 bg-white shadow-md rounded-md md:my-4 ${
           showFilter ? "block" : "hidden md:block"
         }`}
       >
@@ -145,13 +137,23 @@ const AppointLawyears = () => {
 
       {/* Main Content */}
       <div className="w-full md:w-3/4 md:my-4">
-        <div className="text-xl md:text-3xl font-bold shadow-md rounded-xl p-4">
-          <p>Appoint Lawyears</p>
+        <div className="flex items-center gap-2">
+          <div className="text-xl md:text-3xl font-bold text-gray-800 shadow-md rounded-md px-4 py-3 w-full">
+            <p>Appoint Lawyears</p>
+          </div>
+          {/* Filter Button for Mobile */}
+          <button
+            className="md:hidden flex items-center gap-2 bg-blue-600 text-white w-1/3 px-4 py-3 rounded-md shadow-md "
+            onClick={() => setShowFilter(!showFilter)}
+          >
+            <FiFilter /> Filter
+          </button>
         </div>
+
         <div className="mt-4">
           {doctors.map((doctor) => (
             <Link key={doctor.id} to="/LawyearDetails" className="block">
-              <div className="bg-white shadow-lg rounded-xl p-4 md:p-6 flex flex-row items-center space-x-4 w-full border flex-wrap mb-4 cursor-pointer hover:shadow-xl transition">
+              <div className="bg-white shadow-lg rounded-md p-4 md:p-6 flex flex-row items-center space-x-4 w-full border flex-wrap mb-4 cursor-pointer hover:shadow-xl transition">
                 <div className="relative w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 flex-shrink-0">
                   <img
                     src={doctor.image}

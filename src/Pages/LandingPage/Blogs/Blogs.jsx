@@ -42,7 +42,7 @@ const Blogs = () => {
   ];
 
   return (
-    <div>
+    <div className="hidden md:block">
       <section className="px-4 my-20 sm:px-6 lg:px-40 ">
         <h3 className="text-xl font-semibold text-blue-500">Recent Blogs</h3>
         <h2 className="mt-2 text-2xl md:text-5xl font-bold text-gray-800 sm:text-3xl">
@@ -77,14 +77,14 @@ const Blogs = () => {
           </div>
         </div>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <a
             href="#"
             className="flex justify-end text-blue-500 font-semibold hover:underline"
           >
             View All →
           </a>
-        </div>
+        </div> */}
       </section>
     </div>
   );

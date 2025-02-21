@@ -1,26 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Websitepartner = () => {
   const hospitalPartners = [
     {
       name: "Bangladesh Specialized Hospital",
       logo: "/img/attorny-logo-1.jpg",
+      link: "https://www.ldblegal.com/",
     },
     {
       name: "Chevron",
       logo: "/img/attorny-logo-1.jpg",
+      link: "https://www.ldblegal.com/",
     },
     {
       name: "Popular",
       logo: "/img/attorny-logo-1.jpg",
+      link: "https://www.ldblegal.com/",
     },
     {
       name: "Praava Health",
       logo: "/img/attorny-logo-1.jpg",
+      link: "https://www.ldblegal.com/",
     },
     {
       name: "York Hospital",
       logo: "/img/attorny-logo-1.jpg",
+      link: "https://www.ldblegal.com/",
     },
   ];
 
@@ -28,7 +34,7 @@ const Websitepartner = () => {
     <div>
       <section className="my-10 md:my-32 bg-white w-[80%] mx-auto">
         <div className="text-center">
-          <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-12">
+          <h2 className="text-3xl md:text-6xl font-bold text-gray-800 mb-6 md:mb-12">
             Law Farms
           </h2>
           <div className="overflow-x-auto">
@@ -37,8 +43,9 @@ const Websitepartner = () => {
               style={{ width: "100%" }}
             >
               {hospitalPartners.map((partner, index) => (
-                <div
+                <Link
                   key={index}
+                  to={partner.link} // This will use the link property from each partner
                   className="flex flex-col justify-center items-center p-6 w-48 h-48 border border-gray-300 rounded-lg shadow-lg bg-white"
                 >
                   <img
@@ -46,7 +53,7 @@ const Websitepartner = () => {
                     alt={`${partner.name} Logo`}
                     className="h-32 w-auto object-contain"
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
