@@ -51,7 +51,7 @@ const DocumentCheck = () => {
               (section, index) => (
                 <div
                   key={index}
-                  className={`text-center p-2 md:p-3 rounded-md font-semibold cursor-pointer transition-all border-2 
+                  className={`text-center p-2 md:p-3 rounded-md font-semibold cursor-pointer transition-all 
         ${
           selectedSection === section
             ? " shadow-lg scale-105 bg-blue-500 text-white "
