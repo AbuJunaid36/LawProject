@@ -49,7 +49,7 @@ function MobileNav() {
         </Link>
 
         {/* Lawyears Button */}
-        <Link to="/AllLawyears" className="flex flex-col items-center group">
+        <Link to="/AppointLawyears" className="flex flex-col items-center group">
           <GoLaw
             size={26}
             className={`${
