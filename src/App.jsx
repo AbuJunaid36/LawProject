@@ -25,6 +25,7 @@ import FactCheck from "./Pages/FactCheck/FactCheck";
 import AdminDashboard from "./Pages/AdminPanel/AdminDashboard";
 import AdminLayout from "./layouts/AdminLayout"; // Import the AdminLayout
 import AdminSettings from "./Pages/AdminPanel/AdminSettings";
+import AdminAllLawyears from "./Pages/AdminPanel/AdminAllLawyears";
 
 function Layout() {
   return (
@@ -61,6 +62,7 @@ const router = createBrowserRouter(
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="settings" element={<AdminSettings />} />
+        <Route path="adminalllawyears" element={<AdminAllLawyears />} />
       </Route>
     </>
   )

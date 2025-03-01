@@ -9,7 +9,7 @@ const AdminDashboard = () => {
       {/* Search Bar */}
       <div className="flex justify-between items-center bg-gray-300 p-3 rounded-xl mb-5">
         <div className="flex items-center space-x-3 w-full">
-          <FaSearch className="text-gray-400" />
+          <FaSearch className="text-blue-500" />
           <input
             type="text"
             placeholder="Search Everything"
