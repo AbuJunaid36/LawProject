@@ -54,65 +54,65 @@ const adminalllawyears = () => {
         </div>
       </div>
 
-      <div className="rounded-lg shadow overflow-x-auto">
-        <table className="w-auto md:w-full">
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Admin
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Transaction
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Purpose of payment
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Status
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Date
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
-            {transactions.map((transaction, index) => (
-              <tr key={index}>
-                <td className="px-6 py-4  text-sm font-medium text-gray-900">
-                  <div className="flex items-center">
-                    <img
-                      src={transaction.image}
-                      alt={transaction.name}
-                      className="w-10 h-10 rounded mr-3"
-                    />
-                    {transaction.name}
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {transaction.amount}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {transaction.purpose}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <span
-                    className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                      transaction.status === "Complete"
-                        ? "bg-green-100 text-green-800"
-                        : "bg-yellow-100 text-yellow-800"
-                    }`}
-                  >
-                    {transaction.status}
-                  </span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {transaction.date}
-                </td>
+        <div className="overflow-auto xl:overflow-hidden rounded-lg shadow ">
+          <table className="w-full ">
+            {/* <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Admin
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Transaction
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Purpose of payment
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Status
+                </th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Date
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead> */}
+            {/* <tbody className="bg-white divide-y divide-gray-200">
+              {transactions.map((transaction, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4  text-sm font-medium text-gray-900">
+                    <div className="flex items-center">
+                      <img
+                        src={transaction.image}
+                        alt={transaction.name}
+                        className="w-10 h-10 rounded mr-3"
+                      />
+                      {transaction.name}
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {transaction.amount}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {transaction.purpose}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <span
+                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                        transaction.status === "Complete"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-yellow-100 text-yellow-800"
+                      }`}
+                    >
+                      {transaction.status}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {transaction.date}
+                  </td>
+                </tr>
+              ))}
+            </tbody> */}
+          </table>
+        </div>
     </div>
   );
 };

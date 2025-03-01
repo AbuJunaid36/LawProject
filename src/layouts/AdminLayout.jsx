@@ -86,7 +86,7 @@ function AdminLayout() {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="/admin/admindocumentcheck"
               className={({ isActive }) =>
                 `flex items-center space-x-3 cursor-pointer ${
                   isActive
