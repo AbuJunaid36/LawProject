@@ -2,28 +2,37 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Link, NavLink } from "react-router-dom";
 import { FaCog, FaBars } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
-import { FaTasks, FaCalendarAlt, FaChartBar, FaUsersCog, FaQuestionCircle, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaTasks,
+  FaCalendarAlt,
+  FaChartBar,
+  FaUsersCog,
+  FaQuestionCircle,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 function AdminLayout() {
   const [collapsed, setCollapsed] = useState(true); // Always collapsed by default
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Initial state check for mobile
 
   useEffect(() => {
+    // Add event listener on resize to handle screen width change
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-      if (!mobile) setCollapsed(false); // Keep sidebar open on large screens
-      else setCollapsed(true); // Collapse sidebar on mobile
+
+      // Keep sidebar open on larger screens
+      if (!mobile) {
+        setCollapsed(false); // Open sidebar on larger screens
+      } else {
+        setCollapsed(true); // Keep collapsed on small screens
+      }
     };
-  
-    // Run once on page load
-    handleResize();
-  
-    // Add event listener on window resize
+
+    // Attach resize event listener
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
 
   return (
     <div className="flex relative">
@@ -38,9 +47,9 @@ function AdminLayout() {
       {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen bg-white p-5 transition-all duration-300 shadow-lg z-20 rounded-r-xl
-        ${collapsed ? "w-16 -translate-x-0" : "w-52 translate-x-0"}
-        ${isMobile ? (collapsed ? "-translate-x-full" : "translate-x-0") : ""}
-      `}
+          ${collapsed ? "w-16 -translate-x-0" : "w-52 translate-x-0"}
+          ${isMobile ? (collapsed ? "-translate-x-full" : "translate-x-0") : ""}
+        `}
       >
         <div>
           <div className="flex items-center justify-between">
@@ -165,9 +174,9 @@ function AdminLayout() {
 
       {/* Main Content */}
       <main
-        className={`flex-1 md:mx-4 transition-all duration-300 overflow-x-auto ${collapsed ? "pl-14" : "pl-52"} ${
-          isMobile ? "pl-0" : ""
-        }`}
+        className={`flex-1 md:mx-4 transition-all duration-300 overflow-x-auto ${
+          collapsed ? "pl-14" : "pl-52"
+        } ${isMobile ? "pl-0" : ""}`}
       >
         <Outlet />
       </main>

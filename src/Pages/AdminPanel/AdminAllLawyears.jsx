@@ -1,60 +1,67 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { SlOptionsVertical } from "react-icons/sl";
+import { Link } from "react-router-dom";
 
 const adminalllawyears = () => {
-  const transactions = [
-    {
-      name: "Cooper B.",
-      image: "/img/1Y1A2377-Photo-scaled.jpg", // Placeholder image URL
-      amount: "$21,819.00",
-      purpose: "Transfer of own funds",
-      status: "Complete",
-      date: "11 Sep 2023",
-    },
-    {
-      name: "Alexandra T.",
-      image: "/img/1Y1A2377-Photo-scaled.jpg", // Placeholder image URL
-      amount: "$4,671.00",
-      purpose: "Payment of services",
-      status: "In progress",
-      date: "11 Sep 2023",
-    },
-    {
-      name: "Jackson S.",
-      image: "/img/1Y1A2377-Photo-scaled.jpg", // Placeholder image URL
-      amount: "+ $34,239.00",
-      purpose: "Transfer of own funds",
-      status: "Complete",
-      date: "11 Sep 2023",
-    },
-    {
-      name: "Payment",
-      image: "/img/1Y1A2377-Photo-scaled.jpg", // Placeholder image URL
-      amount: "- $1,200.00",
-      purpose: "Monthly subscription",
-      status: "Complete",
-      date: "11 Sep 2023",
-    },
-  ];
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  const [selectedSection, setSelectedSection] = useState("BS");
+  const [activeDropdown, setActiveDropdown] = useState(null); // State to track active dropdown
+
+  // Ref for the dropdown menu
+  const dropdownRef = useRef(null);
 
 
   const lawyers = [
-  {
-    id: 1,
-    image: "https://via.placeholder.com/50",
-    name: "John Doe",
-    totalClients: 120,
-    totalEarned: "$50,000",
-    paid: "$45,000",
-  },
-  {
-    id: 2,
-    image: "https://via.placeholder.com/50",
-    name: "Jane Smith",
-    totalClients: 95,
-    totalEarned: "$40,000",
-    paid: "$38,000",
-  },
-];
+    {
+      id: 1,
+      image: "/img/1Y1A2377-Photo-scaled.jpg",
+      name: "John Doe",
+      totalClients: 120,
+      totalEarned: "$50,000",
+      paid: "$45,000",
+    },
+    {
+      id: 2,
+      image: "/img/1Y1A2377-Photo-scaled.jpg",
+      name: "Jane Smith",
+      totalClients: 95,
+      totalEarned: "$40,000",
+      paid: "$38,000",
+    },
+    {
+      id: 3,
+      image: "/img/1Y1A2377-Photo-scaled.jpg",
+      name: "Jane Smith",
+      totalClients: 95,
+      totalEarned: "$40,000",
+      paid: "$38,000",
+    },
+  ];
+
+  const toggleDropdown = (id) => {
+    // Toggle the dropdown for the clicked row
+    setActiveDropdown(activeDropdown === id ? null : id);
+  };
+
+  // Close the dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="px-4 py-8 w-full">
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
@@ -73,10 +80,8 @@ const adminalllawyears = () => {
         </div>
       </div>
 
-{/* Table */}
-  <div >
-
-  <div className="overflow-x-auto ">
+       {/* Table */}
+       <div className="overflow-x-auto mt-8">
         <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
           <thead>
             <tr className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
@@ -89,10 +94,13 @@ const adminalllawyears = () => {
           </thead>
           <tbody className="text-gray-600 text-sm font-light">
             {lawyers.map((lawyer) => (
-              <tr key={lawyer.id} className="border-b border-gray-200 hover:bg-gray-50">
+              <tr
+                key={lawyer.id}
+                className="border-b border-gray-200 hover:bg-gray-50"
+              >
                 <td className="py-3 px-6 text-left flex items-center">
                   <img
-                    className="w-10 h-10 rounded-full mr-3"
+                    className="w-10 h-10 rounded mr-3"
                     src={lawyer.image}
                     alt={lawyer.name}
                   />
@@ -101,29 +109,40 @@ const adminalllawyears = () => {
                 <td className="py-3 px-6 text-center">{lawyer.totalClients}</td>
                 <td className="py-3 px-6 text-center">{lawyer.totalEarned}</td>
                 <td className="py-3 px-6 text-center">{lawyer.paid}</td>
+
                 <td className="py-3 px-6 text-center">
-                  <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                    Edit
+                  <button
+                    onClick={() => toggleDropdown(lawyer.id)} // Toggle the dropdown
+                    className="text-blue-500 text-xl px-3 py-1"
+                  >
+                    <SlOptionsVertical />
                   </button>
+
+                  {/* Dropdown Menu */}
+                  {activeDropdown === lawyer.id && (
+                    <div
+                      ref={dropdownRef}
+                      className="absolute bg-white border shadow-lg rounded-md mt-1 right-0 w-40 z-10 mr-12"
+                    >
+                      <ul className="text-gray-700">
+                        <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                          <Link to="/">View details</Link>
+                        </li>
+                        <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                          <Link to="/">Option 2</Link>
+                        </li>
+                        <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+                          <Link to="/">Option 3</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-
-
-
-
-
-
-
-  </div>
-
-
-
-
     </div>
   );
 };
