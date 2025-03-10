@@ -5,7 +5,7 @@ import { BsPlayFill } from "react-icons/bs";
 
 const AdminDashboard = () => {
   return (
-    <>
+    <div className="px-4 py-8 w-full">
       {/* Search Bar */}
       <div className="flex justify-between items-center bg-gray-300 p-3 rounded-xl mb-5">
         <div className="flex items-center space-x-3 w-full">
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
           )}
         </div>
       </section>
-    </>
+    </div >
   );
 };
 

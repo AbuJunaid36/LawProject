@@ -10,18 +10,17 @@ import {
   FaQuestionCircle,
   FaSignOutAlt,
 } from "react-icons/fa";
-// import { MdPlaylistPlay } from "react-icons/md";
 
 function AdminLayout() {
-  const [collapsed, setCollapsed] = useState(window.innerWidth <= 768); // Auto collapse on small screens
+  const [collapsed, setCollapsed] = useState(true); // Always collapsed by default
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setCollapsed(true);
-      } else {
-        setCollapsed(false);
-      }
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+      if (!mobile) setCollapsed(false); // Keep sidebar open on large screens
+      else setCollapsed(true); // Ensure it's collapsed on mobile
     };
 
     window.addEventListener("resize", handleResize);
@@ -29,19 +28,32 @@ function AdminLayout() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white flex">
+    <div className="flex relative">
+      {/* Dark Overlay when sidebar is open on mobile */}
+      {isMobile && !collapsed && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-10"
+          onClick={() => setCollapsed(true)}
+        ></div>
+      )}
+
       {/* Sidebar */}
       <aside
-        className={`bg-white p-5 min-h-screen transition-all duration-300 flex flex-col justify-between ${
-          collapsed ? "w-16" : "w-64"
-        } shadow-lg rounded-r-xl`}
+        className={`fixed left-0 top-0 h-screen bg-white p-5 transition-all duration-300 shadow-lg z-20 rounded-r-xl
+          ${collapsed ? "w-16 -translate-x-0" : "w-52 translate-x-0"}
+          ${
+            isMobile ? (collapsed ? "-translate-x-full" : "translate-x-0") : ""
+          }`}
       >
-        {/* Logo & Toggle */}
         <div>
           <div className="flex items-center justify-between">
             {!collapsed && (
               <h1 className="text-lg font-bold text-blue-500 flex items-center space-x-2">
-                <img src="/logo.png" alt="logo" className="w-8 h-8" />
+                <img
+                  src="/img/istockphoto-1179944175-612x612-removebg-preview.png"
+                  alt="logo"
+                  className="w-8 h-8"
+                />
                 <span>Admin</span>
               </h1>
             )}
@@ -53,7 +65,6 @@ function AdminLayout() {
             </button>
           </div>
 
-          {/* Navigation Menu */}
           <nav className="mt-10 space-y-4">
             {!collapsed && <p className="text-gray-400 text-sm">MENU</p>}
 
@@ -153,21 +164,14 @@ function AdminLayout() {
             </Link>
           </nav>
         </div>
-
-        {/* Mobile App Download - Hidden when collapsed */}
-        {!collapsed && (
-          <div className="bg-blue-700 p-4 rounded-xl text-white text-center">
-            <p className="text-sm">Download our Mobile App</p>
-            <p className="text-xs opacity-80">Get easy in another way</p>
-            <button className="mt-2 bg-blue-500 px-4 py-2 rounded-md">
-              Download
-            </button>
-          </div>
-        )}
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-5">
+      <main
+        className={`flex-1 md:mx-4 transition-all duration-300 ${
+          collapsed ? "pl-14" : "pl-52"
+        } ${isMobile ? "pl-0" : ""}`}
+      >
         <Outlet />
       </main>
     </div>

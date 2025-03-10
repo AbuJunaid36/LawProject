@@ -36,8 +36,27 @@ const adminalllawyears = () => {
     },
   ];
 
+
+  const lawyers = [
+  {
+    id: 1,
+    image: "https://via.placeholder.com/50",
+    name: "John Doe",
+    totalClients: 120,
+    totalEarned: "$50,000",
+    paid: "$45,000",
+  },
+  {
+    id: 2,
+    image: "https://via.placeholder.com/50",
+    name: "Jane Smith",
+    totalClients: 95,
+    totalEarned: "$40,000",
+    paid: "$38,000",
+  },
+];
   return (
-    <div className="md:p-6">
+    <div className="px-4 py-8 w-full">
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
         <h1 className="text-2xl text-gray-800 font-bold text-center md:text-left">
           ALL LAWYERS
@@ -54,65 +73,73 @@ const adminalllawyears = () => {
         </div>
       </div>
 
-        <div className="overflow-auto xl:overflow-hidden rounded-lg shadow ">
-          <table className="w-full ">
-            {/* <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Admin
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Transaction
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Purpose of payment
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Date
-                </th>
+{/* Table */}
+  <div >
+
+  {/* <div className="overflow-x-auto p-4">
+        <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
+          <thead>
+            <tr className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+              <th className="py-3 px-6 text-left">Lawyer</th>
+              <th className="py-3 px-6 text-center">Total Clients</th>
+              <th className="py-3 px-6 text-center">Total Earned</th>
+              <th className="py-3 px-6 text-center">Paid</th>
+              <th className="py-3 px-6 text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody className="text-gray-600 text-sm font-light">
+            {lawyers.map((lawyer) => (
+              <tr key={lawyer.id} className="border-b border-gray-200 hover:bg-gray-50">
+                <td className="py-3 px-6 text-left flex items-center">
+                  <img
+                    className="w-10 h-10 rounded-full mr-3"
+                    src={lawyer.image}
+                    alt={lawyer.name}
+                  />
+                  <span>{lawyer.name}</span>
+                </td>
+                <td className="py-3 px-6 text-center">{lawyer.totalClients}</td>
+                <td className="py-3 px-6 text-center">{lawyer.totalEarned}</td>
+                <td className="py-3 px-6 text-center">{lawyer.paid}</td>
+                <td className="py-3 px-6 text-center">
+                  <button className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
+                    Edit
+                  </button>
+                </td>
               </tr>
-            </thead> */}
-            {/* <tbody className="bg-white divide-y divide-gray-200">
-              {transactions.map((transaction, index) => (
-                <tr key={index}>
-                  <td className="px-6 py-4  text-sm font-medium text-gray-900">
-                    <div className="flex items-center">
-                      <img
-                        src={transaction.image}
-                        alt={transaction.name}
-                        className="w-10 h-10 rounded mr-3"
-                      />
-                      {transaction.name}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {transaction.amount}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {transaction.purpose}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <span
-                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        transaction.status === "Complete"
-                          ? "bg-green-100 text-green-800"
-                          : "bg-yellow-100 text-yellow-800"
-                      }`}
-                    >
-                      {transaction.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {transaction.date}
-                  </td>
-                </tr>
-              ))}
-            </tbody> */}
-          </table>
-        </div>
+            ))}
+          </tbody>
+        </table>
+      </div> */}
+
+
+<div className="overflow-x-auto">
+  <table className="min-w-full border border-gray-300">
+    <thead>
+      <tr className="bg-gray-200">
+        <th className="p-2 border">Column 1</th>
+        <th className="p-2 border">Column 2</th>
+        <th className="p-2 border">Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="p-2 border">Data 1</td>
+        <td className="p-2 border">Data 2</td>
+        <td className="p-2 border">Data 3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+  </div>
+
+
+
+
     </div>
   );
 };
