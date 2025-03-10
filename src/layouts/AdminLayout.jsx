@@ -168,7 +168,7 @@ function AdminLayout() {
 
       {/* Main Content */}
       <main
-        className={`flex-1 md:mx-4 transition-all duration-300 ${
+        className={`flex-1 md:mx-4 transition-all duration-300 overflow-x-auto ${
           collapsed ? "pl-14" : "pl-52"
         } ${isMobile ? "pl-0" : ""}`}
       >

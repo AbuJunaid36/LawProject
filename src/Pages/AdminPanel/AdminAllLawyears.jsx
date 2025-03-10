@@ -76,7 +76,7 @@ const adminalllawyears = () => {
 {/* Table */}
   <div >
 
-  {/* <div className="overflow-x-auto p-4">
+  <div className="overflow-x-auto ">
         <table className="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
           <thead>
             <tr className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
@@ -110,27 +110,11 @@ const adminalllawyears = () => {
             ))}
           </tbody>
         </table>
-      </div> */}
+      </div>
 
 
-<div className="overflow-x-auto">
-  <table className="min-w-full border border-gray-300">
-    <thead>
-      <tr className="bg-gray-200">
-        <th className="p-2 border">Column 1</th>
-        <th className="p-2 border">Column 2</th>
-        <th className="p-2 border">Column 3</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td className="p-2 border">Data 1</td>
-        <td className="p-2 border">Data 2</td>
-        <td className="p-2 border">Data 3</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+
 
 
 
