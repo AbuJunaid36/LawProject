@@ -20,13 +20,6 @@ function AdminLayout() {
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
-
-      // Keep sidebar open on larger screens
-      if (!mobile) {
-        setCollapsed(false); // Open sidebar on larger screens
-      } else {
-        setCollapsed(true); // Keep collapsed on small screens
-      }
     };
 
     // Attach resize event listener
@@ -47,8 +40,8 @@ function AdminLayout() {
       {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen bg-white p-5 transition-all duration-300 shadow-lg z-20 rounded-r-xl
-          ${collapsed ? "w-16 -translate-x-0" : "w-52 translate-x-0"}
-          ${isMobile ? (collapsed ? "-translate-x-full" : "translate-x-0") : ""}
+          ${collapsed ? "w-16" : "w-52"}
+          ${isMobile ? "translate-x-0" : ""}
         `}
       >
         <div>
@@ -71,6 +64,7 @@ function AdminLayout() {
             </button>
           </div>
 
+          
           <nav className="mt-10 space-y-4">
             {!collapsed && <p className="text-gray-400 text-sm">MENU</p>}
 
@@ -117,7 +111,7 @@ function AdminLayout() {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="/admin/factcheck"
               className={({ isActive }) =>
                 `flex items-center space-x-3 cursor-pointer ${
                   isActive
@@ -131,7 +125,7 @@ function AdminLayout() {
             </NavLink>
 
             <NavLink
-              to="/"
+              to="/admin/payment"
               className={({ isActive }) =>
                 `flex items-center space-x-3 cursor-pointer ${
                   isActive
@@ -175,8 +169,8 @@ function AdminLayout() {
       {/* Main Content */}
       <main
         className={`flex-1 md:mx-4 transition-all duration-300 overflow-x-auto ${
-          collapsed ? "pl-14" : "pl-52"
-        } ${isMobile ? "pl-0" : ""}`}
+          collapsed ? "pl-16" : "pl-52"
+        }`}
       >
         <Outlet />
       </main>
