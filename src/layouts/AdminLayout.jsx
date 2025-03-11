@@ -64,7 +64,6 @@ function AdminLayout() {
             </button>
           </div>
 
-          
           <nav className="mt-10 space-y-4">
             {!collapsed && <p className="text-gray-400 text-sm">MENU</p>}
 
@@ -148,13 +147,13 @@ function AdminLayout() {
               <FaCog size={18} />
               {!collapsed && <span>Settings</span>}
             </Link>
-            <Link
-              to="/help"
-              className="flex items-center space-x-3 text-gray-400 hover:text-blue-500 cursor-pointer"
-            >
-              <FaQuestionCircle size={18} />
-              {!collapsed && <span>Help</span>}
-            </Link>
+              {/* <Link
+                to="/help"
+                className="flex items-center space-x-3 text-gray-400 hover:text-blue-500 cursor-pointer"
+              >
+                <FaQuestionCircle size={18} />
+                {!collapsed && <span>Help</span>}
+              </Link> */}
             <Link
               to="/"
               className="flex items-center space-x-3 text-gray-400 hover:text-blue-500 cursor-pointer"

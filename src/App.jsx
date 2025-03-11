@@ -27,6 +27,7 @@ import AdminLayout from "./layouts/AdminLayout"; // Import the AdminLayout
 import AdminSettings from "./Pages/AdminPanel/AdminSettings";
 import AdminAllLawyears from "./Pages/AdminPanel/AdminAllLawyears";
 import AdminDocumentCheck from "./Pages/AdminPanel/AdminDocumentCheck";
+import AdminDocumentCheckdetails from "./Pages/AdminPanel/AdminDocumentCheckdetails";
 
 function Layout() {
   return (
@@ -65,6 +66,7 @@ const router = createBrowserRouter(
         <Route path="settings" element={<AdminSettings />} />
         <Route path="adminalllawyears" element={<AdminAllLawyears />} />
         <Route path="admindocumentcheck" element={<AdminDocumentCheck />} />
+        <Route path="admindocumentcheckdetails" element={<AdminDocumentCheckdetails />} />
       </Route>
     </>
   )

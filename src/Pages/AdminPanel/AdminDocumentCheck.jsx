@@ -151,7 +151,9 @@ const AdminDocumentCheck = () => {
                     >
                       <ul className="text-gray-700">
                         <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-                          <Link to="/">View details</Link>
+                          <Link to="/admin/admindocumentcheckdetails">
+                            View details
+                          </Link>
                         </li>
                         <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
                           <Link to="/">Option 2</Link>
