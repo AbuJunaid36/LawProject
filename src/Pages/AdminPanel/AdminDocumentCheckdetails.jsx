@@ -48,7 +48,6 @@ const AdminDocumentCheckdetails = () => {
   </button>
 </div>
 
-
       {/* Admin Panel Card */}
       <div className="w-full">
         {/* Form */}
