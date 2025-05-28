@@ -29,6 +29,7 @@ import AdminAllLawyears from "./Pages/AdminPanel/AdminAllLawyears";
 import AdminDocumentCheck from "./Pages/AdminPanel/AdminDocumentCheck";
 import AdminDocumentCheckdetails from "./Pages/AdminPanel/AdminDocumentCheckdetails";
 import LandDocumentCheck from "./Pages/LandDocumentCheck/LandDocumentCheck";
+import Legal_Help from "./Pages/LegalHelp/Legal_Help";
 
 function Layout() {
   return (
@@ -60,6 +61,7 @@ const router = createBrowserRouter(
         <Route path="/DocumentCheck" element={<DocumentCheck />} />
         <Route path="/FactCheck" element={<FactCheck />} />
         <Route path="/Land_Document_Check" element={<LandDocumentCheck />} />
+        <Route path="/Legal_Help" element={<Legal_Help />} />
       </Route>
 
       {/* Admin Routes (without Header and Footer) */}
@@ -69,6 +71,7 @@ const router = createBrowserRouter(
         <Route path="adminalllawyears" element={<AdminAllLawyears />} />
         <Route path="admindocumentcheck" element={<AdminDocumentCheck />} />
         <Route path="admindocumentcheckdetails" element={<AdminDocumentCheckdetails />} />
+
       </Route>
     </>
   )

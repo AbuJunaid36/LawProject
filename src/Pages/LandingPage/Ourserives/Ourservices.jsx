@@ -32,7 +32,7 @@ const OurServices = () => {
       description: "",
       imgSrc:
         "./img/law-firm-services-with-justice-legal-advice-judgement-and-lawyer-consultant-in-flat-cartoon-poster-hand-drawn-templates-illustration-vector.jpg",
-      link: "/",
+      link: "/Legal_Help",
     },
     {
       title: "Appoint Lawyers",
